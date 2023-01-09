@@ -1,0 +1,17 @@
+@use "sass:map";
+
+$main-hue: 205deg;
+
+$lightness-values: (
+    1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70, 8: 80, 9: 90, 10: 100,
+    light: 97, dark: 3, 0: 0
+);
+
+$saturation-values: (
+    1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70, 8: 80, 9: 90, 10: 100,
+    light: 100, dark: 0, middle-ground: 55, mixed: 65
+);
+
+@function getCC($saturation: 5, $lightness: 5, $opacity: 1, $adjust-hue: 0deg, $saturation-add: 0, $lightness-add: 0) {
+    @return hsla($main-hue + $adjust-hue, (map.get($saturation-values, $saturation) + $saturation-add) * 1%, (map.get($lightness-values, $lightness) + $lightness-add) * 1%, $opacity);
+}

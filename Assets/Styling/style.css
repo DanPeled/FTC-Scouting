@@ -1,0 +1,43 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: hsl(205deg, 50%, 30%);
+}
+
+p,
+h1,
+h2,
+h3 {
+  color: hsl(205deg, 40%, 20%);
+}
+
+form {
+  background-color: hsl(205deg, 60%, 80%);
+  padding: 2vh;
+  border-radius: 3vh;
+}
+
+/*# sourceMappingURL=style.css.map */
+.button {
+  background-color: hsl(205deg, 60%, 80%);
+  /* Green */
+  border: none;
+  color: hsl(205deg, 40%, 20%);
+  padding: 2vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3vh;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px;
+  padding: 10px;
+}

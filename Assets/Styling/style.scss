@@ -1,0 +1,24 @@
+@import "custom_scss";
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    background-color: getCC(5,3);  
+}
+
+p, h1, h2, h3 {
+    color: getCC(4, 2);
+}
+
+form {
+    background-color: getCC(6,8);
+    padding: 2vh;
+    border-radius: 3vh;
+}
+
+
+
