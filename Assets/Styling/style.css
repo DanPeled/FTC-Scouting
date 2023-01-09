@@ -41,3 +41,12 @@ form {
   border: 3px;
   padding: 10px;
 }
+input[type=text], input[type=password], input[type=email], input[type=number] {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+fieldset {
+  padding: 10px;
+}
