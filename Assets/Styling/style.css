@@ -50,13 +50,23 @@ form * {
   text-align: right;
 }
 
-.hebrew, .hebrew * {
-  font-family: "Varela Round";
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px;
+  padding: 10px;
 }
 
-datalist option {
-  font-size: 200%;
-  color: black;
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number] {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  background-color: hsl(205deg, 60%, 80%);
+  border-radius: 3vh;
+  color: black
 }
 
 button.SubButton {
