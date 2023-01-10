@@ -5,20 +5,63 @@ body {
     height: 100vh;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     display: flex;
     flex-direction: row;
-    background-color: getCC(5,3);  
+    background-color: getCC(5, 3);
+    * {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include flexing();
 }
 
 p, h1, h2, h3 {
-    color: getCC(4, 2);
+    color: getCC(10, 1, 1, 5);
+    
 }
 
 form {
-    background-color: getCC(6,8);
+    background-color: getCC(8, 8);
     padding: 2vh;
     border-radius: 3vh;
+    height: fit-content;
+    margin: 3vh, 1vw;
+    padding: 3vh;
+    
+    @include flexing($item-alignment: right);
+    row-gap: 1em;
+    * {
+        text-align: right;
+    }
 }
 
+.hebrew, .hebrew * {
+    font-family: "Varela Round";
+}
 
+datalist option {
+    font-size: 200%;
+    color: black;
+}
 
+button.SubButton {
+    font-size: 1.4rem;
+    
+    background-color: getCC(light,3,0.5);
+    $main-color: getCC(9,7);
+    color: $main-color;
+    border: 0.2em $main-color solid;
+    border-radius: 0.4em;
+
+    cursor: pointer;
+    margin: 0.5em 0.2em;
+    padding: 0.2em 0.4em;
+    transition: 250ms ease-in-out;
+    &:hover {
+        box-shadow: 0em 0em 0.2em 0em $main-color inset, 0em 0em 0.35em 0em $main-color inset;
+    }
+}

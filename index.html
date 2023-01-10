@@ -2,23 +2,69 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-16">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>Scouting 2023</title>
     <link rel="stylesheet" href="./Assets/Styling/style.css">
-
+    <script src="./Assets/Scripts/forms.js"></script>
+    <script src="./Assets/Scripts/firebase_script.js" type="module" defer></script>
+    
 </head>
 
 <body>
-    <script src="Assets/Scripts/forms.js"></script>
     <div class ="center">
-        <form>
+        <form class="hebrew">
             <h2>שם קבוצה ומספר</h2>
-            <input type="text" class="info" id="name" placeholder="שם קבוצה ומספר">
+            <input type="text" class="info" id="name" list="teams_suggest" placeholder="שם קבוצה ומספר">
+            <datalist id="teams_suggest">
+                <option>Fata Morgana#15637</option>
+                <option>SciFighters#16473</option>
+                <option>Everglow#19000</option>
+                <option>RoboTen#15298</option>
+                <option>Orbit Vikings#14029</option>
+                <option>Megiddo Lions#18833</option>
+                <option>Connection#11808</option>
+                <option>THE KRAKENS#15768</option>
+                <option>Orbit#14872</option>
+                <option>Quack Attack#11635</option>
+                <option>Black Tigers#11192</option>
+                <option>ATOMIX 11443#11443</option>
+                <option>Orbit 12#14028</option>
+                <option>Apollo#9662</option>
+                <option>Bomba#14869</option>
+                <option>boosteam#15811</option>
+                <option>TerraKnights#20352</option>
+                <option>PlanTech#17106</option>
+                <option>AbilityEdge#18273</option>
+                <option>Build For Change#20669</option>
+                <option>Super Cow#12989</option>
+                <option>BTJ#13452</option>
+                <option>TATOOINE#12201</option>
+                <option>SYCATECH#18268</option>
+                <option>MEGIDDO LIONS#12797</option>
+                <option>Makers Assemble#13146</option>
+                <option>Achva Gilboa#11803</option>
+                <option>Flaming Marshmallows#11530</option>
+                <option>Everest#12817</option>
+                <option>Black Thunder#11226</option>
+                <option>amit hatzor#20426</option>
+                <option>OrangeFox#12363</option>
+                <option>AIS Talons#19967</option>
+                <option>Mechanic Makers#17056</option>
+                <option>BlackBeard in memory of Noa Hayat#17019</option>
+                <option>AM.I.T ASHDOD#15141</option>
+                <option>Red Mask#17182</option>
+                <option>kiryt shmona#20668</option>
+                <option>Galileo#11744</option>
+                <option>RinGoStar#18735</option>
+                <option>ort hatzor 1#19766</option>
+                <option>The Y Bot#11056</option>
+            </datalist>    
+            
             <h2>מקצה</h2>
-            <input type="text" class="info" placeholder="מקצה">
+            <input type="number" class="info" placeholder="מקצה">
             <h2>אוטנומי</h2> <hr>
             <h2>שמו את הקונוס הראשון</h2>
             <select class="info" placeholder="שמו את הקונוס הראשון">
@@ -32,7 +78,7 @@
 
         </form>
 
-        <button class="button" onclick="submitValues()" id="sub">Submit</button>
+        <button class="button SubButton" onclick="submitValues()" id="sub">Submit</button>
     </div>
 </body>
 
