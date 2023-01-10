@@ -50,23 +50,13 @@ form * {
   text-align: right;
 }
 
-.center {
-  margin: auto;
-  width: 50%;
-  border: 3px;
-  padding: 10px;
+.hebrew, .hebrew * {
+  font-family: "Varela Round";
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=number] {
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  background-color: hsl(205deg, 60%, 80%);
-  border-radius: 3vh;
-  color: black
+datalist option {
+  font-size: 200%;
+  color: black;
 }
 
 button.SubButton {
@@ -82,4 +72,40 @@ button.SubButton {
 }
 button.SubButton:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+select,
+option {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  background-color: hsl(205deg, 80%, 70%);
+  border-radius: 3vh;
+  color: black;
+}
+
+div.center {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+::-webkit-scrollbar {
+  width: initial;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(-90deg, hsl(205deg, 100%, 20%) 0%, hsl(205deg, 100%, 30%) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(205deg, 80%, 60%);
 }
