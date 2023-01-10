@@ -15,3 +15,19 @@ $saturation-values: (
 @function getCC($saturation: 5, $lightness: 5, $opacity: 1, $adjust-hue: 0deg, $saturation-add: 0, $lightness-add: 0) {
     @return hsla($main-hue + $adjust-hue, (map.get($saturation-values, $saturation) + $saturation-add) * 1%, (map.get($lightness-values, $lightness) + $lightness-add) * 1%, $opacity);
 }
+
+@mixin flexing($direction: column, $spacing: space-around, $alignment: center, $item-alignment: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $spacing;
+    align-content: $alignment;
+    align-items: $item-alignment;
+}
+
+
+@font-face {
+    font-family: "Varela Round";
+    src: url("./fonts/VarelaRound-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
