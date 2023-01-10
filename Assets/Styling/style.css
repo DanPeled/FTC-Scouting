@@ -4,6 +4,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 body {
   width: 100vw;
   height: 100vh;
@@ -20,13 +21,17 @@ body {
   align-content: center;
   align-items: center;
 }
+
 body * {
   position: relative;
   margin: 0;
   padding: 0;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   color: hsl(210deg, 100%, 10%);
 }
 
@@ -46,8 +51,18 @@ form {
   align-items: right;
   row-gap: 1em;
 }
-form * {
-  text-align: right;
+
+/*# sourceMappingURL=style.css.map */
+.button {
+  background-color: hsl(205deg, 60%, 80%);
+  border: none;
+  color: hsl(205deg, 40%, 20%);
+  padding: 2vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3vh;
 }
 
 .hebrew, .hebrew * {
@@ -70,6 +85,7 @@ button.SubButton {
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
+
 button.SubButton:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
