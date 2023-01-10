@@ -12,23 +12,27 @@
 </head>
 
 <body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="Assets/Scripts/forms.js"></script>
-    <div class ="center">
+    <script src="Assets/Scripts/fire.js"></script>
+    <div class="center">
         <form>
             <h2>שם קבוצה ומספר</h2>
             <input type="text" class="info" id="name" placeholder="שם קבוצה ומספר">
             <h2>מקצה</h2>
             <input type="text" class="info" placeholder="מקצה">
-            <h2>אוטנומי</h2> <hr>
+            <h2>אוטנומי</h2>
+            <hr>
             <h2>שמו את הקונוס הראשון</h2>
-            <select class="info" placeholder="שמו את הקונוס הראשון">
-                <option value="Y">כן</option>
-                <option value="N">לא</option>
-            </select>
+            <input type="checkbox" title="שמו את הקונוס הראשון" placeholder="שמו את הקונוס הראשון">
             <h2>כמות של קונוסים ששמו במשולש בקצה</h2>
             <input type="number" class="info" placeholder="כמות של קונוסים ששמו במשולש בקצה">
+            <h2>כמה הם שמו על המוט הכי גבוה</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי גבוה">
             <h2>דרג את הקבוצה מ1 עד 10</h2>
             <input type="number" min="1" max="10" class="info" placeholder="דירוג">
+
 
         </form>
 
