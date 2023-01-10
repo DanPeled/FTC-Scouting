@@ -20,11 +20,9 @@ form {
   padding: 2vh;
   border-radius: 3vh;
 }
-
 /*# sourceMappingURL=style.css.map */
 .button {
   background-color: hsl(205deg, 60%, 80%);
-  /* Green */
   border: none;
   color: hsl(205deg, 40%, 20%);
   padding: 2vh;
@@ -41,12 +39,26 @@ form {
   border: 3px;
   padding: 10px;
 }
-input[type=text], input[type=password], input[type=email], input[type=number] {
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number] {
   margin-left: 0px;
   margin-right: 0px;
   width: 100%;
+  background-color: hsl(205deg, 60%, 80%);
+  border-radius: 3vh;
+  color: black
 }
 
 fieldset {
   padding: 10px;
+}
+
+option,
+select {
+  background-color: hsl(205deg, 60%, 80%);
+  padding: 1vh;
+  border-radius: 3vh;
 }

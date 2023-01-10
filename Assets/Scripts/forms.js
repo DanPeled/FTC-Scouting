@@ -1,8 +1,13 @@
 let values = [];
 const submitValues = () => {
-    inputList = document.querySelectorAll("input.info");
+    inputList = document.querySelectorAll("input");
+    selectList = document.querySelectorAll("select.info");
     inputList.forEach((e, i) => {
-        values[i] = `${inputList[i].getAttribute("placeholder")}: ${e.value}`;
+        values.push(`${inputList[i].getAttribute("placeholder")}: ${e.value}`);
+    });
+
+    selectList.forEach((e,i) => {
+        values.push(`${selectList[i].getAttribute("placeholder")}: ${e.value}`);
     });
     console.log(values);
 };
