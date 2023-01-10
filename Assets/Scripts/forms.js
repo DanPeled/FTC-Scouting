@@ -1,23 +1,8 @@
-const inputList = document.querySelectorAll("input.info");
 let values = [];
-
-const submitValues = async () => {
-    inputList.forEach((e) => {
-        values.push(e.value);
+const submitValues = () => {
+    inputList = document.querySelectorAll("input.info");
+    inputList.forEach((e, i) => {
+        values[i] = `${inputList[i].getAttribute("placeholder")}: ${e.value}`;
     });
-    try {
-        const response = await fetch("https://danpeled.github.io/FTC-Scouting/", {
-            method: "POST",
-            body: JSON.stringify({ data: values }),
-            headers: { "Content-Type": "application/json" },
-        });
-        const data = await response.json();
-        if (data.success) {
-            console.log("File saved successfully");
-        } else {
-            console.error("Failed to save file");
-        }
-    } catch (error) {
-        console.error(`Error: ${error}`);
-    }
+    console.log(values);
 };
