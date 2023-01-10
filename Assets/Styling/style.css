@@ -74,10 +74,7 @@ button.SubButton:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=number],
+input,
 select,
 option {
   margin-left: 0px;
@@ -86,8 +83,8 @@ option {
   background-color: hsl(205deg, 80%, 70%);
   border-radius: 3vh;
   color: black;
-  min-height: 1.4vh;
-  min-width: 1.4vh;
+  min-height: 3vh;
+  min-width: 3vh;
 }
 
 div.center {

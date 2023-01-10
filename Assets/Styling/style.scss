@@ -66,10 +66,8 @@ button.SubButton {
     }
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=number],
+
+input,
 select,
 option {
   margin-left: 0px;
@@ -78,8 +76,8 @@ option {
   background-color: getCC(8,7);
   border-radius: 3vh;
   color: black;
-  min-height: 1.4vh;
-  min-width: 1.4vh;
+  min-height: 3vh;
+  min-width: 3vh;
 }
 
 div.center {
