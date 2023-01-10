@@ -19,6 +19,8 @@ form {
   background-color: hsl(205deg, 60%, 80%);
   padding: 2vh;
   border-radius: 3vh;
+  height: 600;
+  width: 900;
 }
 /*# sourceMappingURL=style.css.map */
 .button {
@@ -35,8 +37,8 @@ form {
 
 .center {
   margin: auto;
-  width: 50%;
-  border: 3px;
+  width: 70%;
+  border: 0px;
   padding: 10px;
 }
 
@@ -46,7 +48,7 @@ input[type=email],
 input[type=number] {
   margin-left: 0px;
   margin-right: 0px;
-  width: 100%;
+  width: 70%;
   background-color: hsl(205deg, 60%, 80%);
   border-radius: 3vh;
   color: black
