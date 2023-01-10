@@ -65,11 +65,8 @@ form {
   border-radius: 3vh;
 }
 
-.center {
-  margin: auto;
-  width: 50%;
-  border: 3px;
-  padding: 10px;
+.hebrew, .hebrew * {
+  font-family: "Varela Round";
 }
 
 datalist option {
