@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./Assets/Styling/style.css">
     <script src="./Assets/Scripts/forms.js"></script>
     <script src="./Assets/Scripts/firebase_script.js" type="module" defer></script>
-    
+
 </head>
 
 <body>
@@ -61,17 +61,32 @@
                 <option>RinGoStar#18735</option>
                 <option>ort hatzor 1#19766</option>
                 <option>The Y Bot#11056</option>
-            </datalist>    
-            
+            </datalist>
+
             <h2>מקצה</h2>
             <input type="number" class="info" placeholder="מקצה">
-            <h2>אוטנומי</h2> <hr>
+            <h2>אוטנומי</h2>
+            <hr>
             <h2>שמו את הקונוס הראשון</h2>
             <input type="checkbox" title="שמו את הקונוס הראשון" placeholder="שמו את הקונוס הראשון">
             <h2>כמות של קונוסים ששמו במשולש בקצה</h2>
-            <input type="number" class="info" placeholder="כמות של קונוסים ששמו במשולש בקצה">
+            <input type="number" class="info" placeholder="כמות של קונוסים ששמו במשולש בקצה" min="0">
             <h2>כמה הם שמו על המוט הכי גבוה</h2>
-            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי גבוה">
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי גבוה" min="0">
+            <h2>כמה הם שמים על המוט הבינוני-גבוה</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הבינוני-גבוה" min="0">
+            <h2>כמה הם שמים על המוט הבינוני-נמוך</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הבינוני-נמוך" min="0">
+            <h2>כמה הם שמים על המוט הכי נמוך</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי נמוך" min="0">
+            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+            <input type="number" class="info" placeholder="כמה קונוסים מכניסים בעמדות השחורות" min="0">
+            <h2>מיקום חניה נכון</h2>
+            <input type="text" class="info" id="name" list="parking_correct" placeholder="מיקום חניה נכון" required>
+            <datalist id="parking_correct">
+                <option>כן</option>
+                <option>לא</option>
+            </datalist>
             <h2>דרג את הקבוצה מ1 עד 10</h2>
             <input type="number" min="1" max="10" class="info" placeholder="דירוג">
 
