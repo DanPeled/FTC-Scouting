@@ -23,6 +23,7 @@ const submitValues = () => {
 
     console.log(values);
     data = listToDict(values);
+    console.log(data)
 };
 
 
