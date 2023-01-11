@@ -62,7 +62,6 @@
                 <option>ort hatzor 1#19766</option>
                 <option>The Y Bot#11056</option>
             </datalist>
-
             <h2>מקצה</h2>
             <input type="number" class="info" placeholder="מקצה">
             <h2>אוטנומי</h2>
@@ -87,10 +86,52 @@
                 <option>כן</option>
                 <option>לא</option>
             </datalist>
+            <h2>חנייה</h2>
+            <input type="text" class="info" id="name" list="parking_pos" placeholder="חנייה" required>
+            <datalist id="parking_pos">
+                <option>חנייה לפי האוטונומי</option>
+                <option>חנייה בתוך החצי ריבוע בקצה</option>
+                <option>חנייה בתוך המשולש</option>
+            </datalist>
+
             <h2>דרג את הקבוצה מ1 עד 10</h2>
             <input type="number" min="1" max="10" class="info" placeholder="דירוג">
-
-
+            <h2>אחרי אוטנומי</h2><hr>
+            <h2>כמה הם שמים על המוט הכי גבוה</h2>
+            <input type="number" min="0" class="info" placeholder="כמה הם שמים על המוט הכי גבוה">
+            <h2>כמה הם שמים על המוט הבינוני-גבוה</h2>
+            <input type="number" min="0" class="info" placeholder="כמה הם שמים על המוט הבינוני-גבוה">
+            <h2>כמה הם שמים על המוט הבינוני-נמוך</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הבינוני-נמוך" min="0">
+            <h2>כמה הם שמים על המוט הכי נמוך</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי נמוך" min="0">
+            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+            <input type="number" class="info" placeholder="כמה קונוסים מכניסים בעמדות השחורות" min="0">
+            <h2>הערות</h2>
+            <input type="text" class="info" placeholder="הערות">
+            <h2>אנדגיים</h2><hr>
+            <h2>כמה הם שמים על המוט הכי גבוה</h2>
+            <input type="number" min="0" class="info" placeholder="כמה הם שמים על המוט הכי גבוה">
+            <h2>כמה הם שמים על המוט הבינוני-גבוה</h2>
+            <input type="number" min="0" class="info" placeholder="כמה הם שמים על המוט הבינוני-גבוה">
+            <h2>כמה הם שמים על המוט הבינוני-נמוך</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הבינוני-נמוך" min="0">
+            <h2>כמה הם שמים על המוט הכי נמוך</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי נמוך" min="0">
+            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+            <input type="number" class="info" placeholder="כמה קונוסים מכניסים בעמדות השחורות" min="0">
+            <h2>האם שמו את האלמנט המיוחד שלהם</h2>
+            <input type="select" class="info" id="special_element" list="special_element" placeholder="האם שמו את האלמנט המיוחד שלהם" required>
+            <datalist id="special_element">
+                <option>כן</option>
+                <option>לא</option>
+            </datalist>
+            <h2>האם הרובוט חנה</h2>
+            <input type="select" class="info" id="robot_park" list="robot_park" placeholder="האם הרובוט חנה" required>
+            <datalist id="robot_park">
+                <option>כן</option>
+                <option>לא</option>
+            </datalist>
         </form>
 
         <button class="button SubButton" onclick="submitValues()" id="sub">Submit</button>
