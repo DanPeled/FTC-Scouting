@@ -50,22 +50,22 @@ async function getDocRef__(collectionName) {
 }
 
 // Hasn't been tested yet...
-async function writeDoc__(collectionName, o_ = {}) {
-  if(collectionName.length % 2 != 0) {
-    console.error("collectionNames (length) is unexecutable for search (due to uneven amount of collections and documents)");
-    return;
-  }
-  let docRef = doc(db, collectionName[0], collectionName[1]);
-  for (let index = 2; index < collectionName.length; index += 2) {
-    docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
-  };  
-  docRef = await setDoc(docRef, o_)
-    .then(() => {
-      console.log("Data set successfully");
-    }).catch((error) => {
-      console.log("Operation failed; error: " + error);
-    });
-}
+// async function writeDoc__(collectionName, o_ = {}) {
+//   if(collectionName.length % 2 != 0) {
+//     console.error("collectionNames (length) is unexecutable for search (due to uneven amount of collections and documents)");
+//     return;
+//   }
+//   let docRef = doc(db, collectionName[0], collectionName[1]);
+//   for (let index = 2; index < collectionName.length; index += 2) {
+//     docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
+//   };  
+//   docRef = await setDoc(docRef, o_)
+//     .then(() => {
+//       console.log("Data set successfully");
+//     }).catch((error) => {
+//       console.log("Operation failed; error: " + error);
+//     });
+// }
 
 // works, tested;
 async function getDoc__(collectionName, id_) {
