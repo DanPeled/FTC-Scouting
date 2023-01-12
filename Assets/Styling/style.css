@@ -13,7 +13,7 @@ body {
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  background-color: hsl(205deg, 50%, 30%);
+  background-color: rgb(29, 128, 73);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -27,11 +27,11 @@ body * {
 }
 
 p, h1, h2, h3 {
-  color: hsl(210deg, 100%, 10%);
+  color: rgb(0,0,0);
 }
 
 form {
-  background-color: hsl(205deg, 80%, 80%);
+  background-color: rgb(60, 179, 113);
   padding: 2vh;
   border-radius: 3vh;
   height: -webkit-fit-content;
@@ -61,9 +61,9 @@ datalist option {
 
 button.SubButton {
   font-size: 1.4rem;
-  background-color: hsla(205deg, 100%, 30%, 0.5);
-  color: hsl(205deg, 90%, 70%);
-  border: 0.2em hsl(205deg, 90%, 70%) solid;
+  background-color: rgb(60, 179, 113, 0.5);
+  color: rgb(52, 38, 38);
+  border: 0.2em rgb(35, 179, 100) solid;
   border-radius: 0.4em;
   cursor: pointer;
   margin: 0.5em 0.2em;
@@ -71,7 +71,7 @@ button.SubButton {
   transition: 250ms ease-in-out;
 }
 button.SubButton:hover {
-  box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
+  box-shadow: 0em 0em 0.2em 0em rgb(60, 179, 113) inset, 0em 0em 0.35em 0em rgb(60, 179, 113) inset;
 }
 
 input,
@@ -80,7 +80,7 @@ option {
   margin-left: 0px;
   margin-right: 0px;
   width: 100%;
-  background-color: hsl(205deg, 80%, 70%);
+  background-color: rgb(70, 211, 133);
   border-radius: 3vh;
   color: black;
   min-height: 3vh;
@@ -102,9 +102,9 @@ div.center {
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(-90deg, hsl(205deg, 100%, 20%) 0%, hsl(205deg, 100%, 30%) 100%);
+  background: linear-gradient(-90deg, rgb(60, 179, 113) 0%, rgb(60, 179, 113) 100%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(205deg, 80%, 60%);
+  background: rgb(38, 127, 78);
 }

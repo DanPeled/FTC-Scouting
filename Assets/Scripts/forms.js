@@ -22,8 +22,6 @@ const submitValues = () => {
     addValues(document.querySelectorAll("input"));
 
     console.log(values);
-    data = listToDict(values);
-    console.log(data)
 };
 
 
