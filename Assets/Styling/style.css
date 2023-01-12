@@ -4,7 +4,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
 body {
   width: 100vw;
   height: 100vh;
@@ -14,14 +13,13 @@ body {
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  background-color: rgb(6, 88, 44);
+  background-color: hsl(205deg, 50%, 30%);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
   align-items: center;
 }
-
 body * {
   position: relative;
   margin: 0;
@@ -32,11 +30,12 @@ p,
 h1,
 h2,
 h3 {
-  color: rgb(0, 0, 0);
+  color: hsl(210deg, 100%, 10%);
+  font-weight: 900;
 }
 
 form {
-  background-color: rgb(60, 179, 113);
+  background-color: hsl(205deg, 80%, 80%);
   padding: 2vh;
   border-radius: 3vh;
   height: -webkit-fit-content;
@@ -51,7 +50,6 @@ form {
   align-items: right;
   row-gap: 1em;
 }
-
 form * {
   text-align: right;
 }
@@ -68,18 +66,17 @@ datalist option {
 
 button.SubButton {
   font-size: 1.4rem;
-  background-color: rgb(60, 179, 113, 0.5);
-  color: rgb(52, 38, 38);
-  border: 0.2em rgb(35, 179, 100) solid;
+  background-color: hsla(205deg, 100%, 30%, 0.5);
+  color: hsl(205deg, 90%, 70%);
+  border: 0.2em hsl(205deg, 90%, 70%) solid;
   border-radius: 0.4em;
   cursor: pointer;
   margin: 0.5em 0.2em;
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
-
 button.SubButton:hover {
-  box-shadow: 0em 0em 0.2em 0em rgb(60, 179, 113) inset, 0em 0em 0.35em 0em rgb(60, 179, 113) inset;
+  box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
 
 input,
@@ -88,7 +85,7 @@ option {
   margin-left: 0px;
   margin-right: 0px;
   width: 100%;
-  background-color: rgb(70, 211, 133);
+  background-color: hsl(205deg, 80%, 70%);
   border-radius: 3vh;
   color: black;
   min-height: 3vh;
@@ -110,9 +107,9 @@ div.center {
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(-90deg, rgb(60, 179, 113) 0%, rgb(60, 179, 113) 100%);
+  background: linear-gradient(-90deg, hsl(205deg, 100%, 20%) 0%, hsl(205deg, 100%, 30%) 100%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(9, 120, 61);
-}
+  background: hsl(205deg, 80%, 60%);
+}/*# sourceMappingURL=style.css.map */

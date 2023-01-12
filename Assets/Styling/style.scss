@@ -1,5 +1,7 @@
 @import "custom_scss";
 
+
+
 body {
     width: 100vw;
     height: 100vh;
@@ -10,6 +12,7 @@ body {
     display: flex;
     flex-direction: row;
     background-color: getCC(5, 3);
+
     * {
         position: relative;
         margin: 0;
@@ -19,10 +22,15 @@ body {
     @include flexing();
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
     color: getCC(10, 1, 1, 5);
-    
+    font-weight: 900;
+
 }
+
 
 form {
     background-color: getCC(8, 8);
@@ -31,15 +39,17 @@ form {
     height: fit-content;
     margin: 3vh, 1vw;
     padding: 3vh;
-    
+
     @include flexing($item-alignment: right);
     row-gap: 1em;
+
     * {
         text-align: right;
     }
 }
 
-.hebrew, .hebrew * {
+.hebrew,
+.hebrew * {
     font-family: "Varela Round";
 }
 
@@ -50,9 +60,9 @@ datalist option {
 
 button.SubButton {
     font-size: 1.4rem;
-    
-    background-color: getCC(light,3,0.5);
-    $main-color: getCC(9,7);
+
+    background-color: getCC(light, 3, 0.5);
+    $main-color: getCC(9, 7);
     color: $main-color;
     border: 0.2em $main-color solid;
     border-radius: 0.4em;
@@ -61,6 +71,7 @@ button.SubButton {
     margin: 0.5em 0.2em;
     padding: 0.2em 0.4em;
     transition: 250ms ease-in-out;
+
     &:hover {
         box-shadow: 0em 0em 0.2em 0em $main-color inset, 0em 0em 0.35em 0em $main-color inset;
     }
@@ -70,14 +81,14 @@ button.SubButton {
 input,
 select,
 option {
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 100%;
-  background-color: getCC(8,7);
-  border-radius: 3vh;
-  color: black;
-  min-height: 3vh;
-  min-width: 3vh;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    background-color: getCC(8, 7);
+    border-radius: 3vh;
+    color: black;
+    min-height: 3vh;
+    min-width: 3vh;
 }
 
 div.center {
@@ -91,9 +102,9 @@ div.center {
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(-90deg, getCC(10,2) 0%, getCC(10,3) 100%);
+    background: linear-gradient(-90deg, getCC(10, 2) 0%, getCC(10, 3) 100%);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: getCC(8,6);
+    background: getCC(8, 6);
 }
