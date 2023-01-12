@@ -13,7 +13,7 @@ body {
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  background-color: rgb(29, 128, 73);
+  background-color: rgb(6, 88, 44);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -106,5 +106,5 @@ div.center {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(38, 127, 78);
+  background: rgb(9, 120, 61);
 }
