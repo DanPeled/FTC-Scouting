@@ -20,8 +20,9 @@ const addValues = (lst) => {
 const submitValues = () => {
     values = []; // Resetting values
     addValues(document.querySelectorAll("input"));
-
+    jsonFormat = listToDict(values);
     console.log(values);
+    console.log(jsonFormat);
 };
 
 
