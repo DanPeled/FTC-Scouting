@@ -68,6 +68,7 @@ async function getDocRef__(collectionName) {
 // }
 
 // works, tested;
+
 async function getDoc__(collectionName, id_) {
   const docSnap = await getDoc(doc(db, collectionName, id_));
   if (docSnap.exists()) {
