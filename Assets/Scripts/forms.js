@@ -12,9 +12,8 @@ function listToDict(list) { // converts from string to json format.
 
 
 const addValues = (lst) => {
-    //TODO: Change placeholder to a costume attribute and add matching values in index.html
     lst.forEach((e, i) => {
-        values.push(`${lst[i].getAttribute("placeholder")}: ${e.value}`);
+        values.push(`${lst[i].getAttribute("json")}: ${e.value}`);
     });
 }
 
