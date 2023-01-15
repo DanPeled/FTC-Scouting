@@ -13,16 +13,16 @@ function listToDict(list) { // converts from string to json format.
 
 const addValues = (lst) => {
     lst.forEach((e, i) => {
-        values.push(`${lst[i].getAttribute("placeholder")}: ${e.value}`);
+        values.push(`${lst[i].getAttribute("json")}: ${e.value}`);
     });
 }
 
 const submitValues = () => {
     values = []; // Resetting values
     addValues(document.querySelectorAll("input"));
-
+    jsonFormat = listToDict(values);
     console.log(values);
-    data = listToDict(values);
+    console.log(jsonFormat);
 };
 
 

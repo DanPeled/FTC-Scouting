@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hebrew">
 
 <head>
     <meta charset="UTF-16">
@@ -10,14 +10,31 @@
     <link rel="stylesheet" href="./Assets/Styling/style.css">
     <script src="./Assets/Scripts/forms.js"></script>
     <script src="./Assets/Scripts/firebase_script.js" type="module" defer></script>
-    
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+
 </head>
 
 <body>
+
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'he' },
+                'google_translate_element'
+            );
+        }
+    </script>
+
+
     <div class="center">
         <form class="hebrew">
             <h2>שם קבוצה ומספר</h2>
-            <input type="text" class="info" id="name" list="teams_suggest" placeholder="שם קבוצה ומספר" required>
+            <input type="text" class="info" id="name" list="teams_suggest" placeholder="שם קבוצה ומספר"
+                json="שם קבוצה ומספר" required="">
             <datalist id="teams_suggest">
                 <option>Fata Morgana#15637</option>
                 <option>SciFighters#16473</option>
@@ -61,24 +78,93 @@
                 <option>RinGoStar#18735</option>
                 <option>ort hatzor 1#19766</option>
                 <option>The Y Bot#11056</option>
-            </datalist>    
-            
+            </datalist>
             <h2>מקצה</h2>
-            <input type="number" class="info" placeholder="מקצה">
-            <h2>אוטנומי</h2> <hr>
+            <input type="number" class="info" placeholder="מקצה" min="0" json="מקצה">
+            <h2>אוטנומי</h2>
+            <hr>
             <h2>שמו את הקונוס הראשון</h2>
-            <input type="checkbox" title="שמו את הקונוס הראשון" placeholder="שמו את הקונוס הראשון">
+            <input type="checkbox" title="שמו את הקונוס הראשון" placeholder="שמו את הקונוס הראשון אוטנומי"
+                json="שמו את הקונוס הראשון אוטנומי">
             <h2>כמות של קונוסים ששמו במשולש בקצה</h2>
-            <input type="number" class="info" placeholder="כמות של קונוסים ששמו במשולש בקצה">
-            <h2>כמה הם שמו על המוט הכי גבוה</h2>
-            <input type="number" class="info" placeholder="כמה הם שמים על המוט הכי גבוה">
+            <input type="number" class="info" placeholder="כמות של קונוסים ששמו במשולש בקצה אוטנומי" min="0"
+                json="כמות של קונוסים ששמו במשולש בקצה אוטנומי">
+            <h2>כמה הם שמו על צומת הכי גבוה</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על צומת הכי גבוה אוטנומי" min="0"
+                json="כמה הם שמים על צומת הכי גבוה אוטנומי">
+            <h2>כמה הם שמים על הצומת הבינונית</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על הצומת הבינונית אוטנומי" min="0"
+                json="כמה הם שמים על הצומת הבינונית אוטנומי">
+            <h2>כמה הם שמים על צומת הנמוכה</h2>
+            <input type="number" class="info" placeholder="כמה הם שמים על צומת הנמוכה אוטנומי" min="0"
+                json="כמה הם שמים על צומת הנמוכה אוטנומי">
+            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+            <input type="number" class="info" placeholder="כמה קונוסים מכניסים בעמדות השחורות אוטנומי" min="0"
+                json="כמה קונוסים מכניסים בעמדות השחורות אוטנומי">
+            <h2>מיקום חניה נכון</h2>
+            <input type="checkbox" class="info" id="name" placeholder="מיקום חניה נכון אוטנומי"
+                json="מיקום חניה נכון אוטנומי">
+            <h2>חנייה</h2>
+            <input type="text" class="info" id="name" list="parking_pos" placeholder="חנייה אוטנומי" required=""
+                json="חנייה אוטנומי">
+            <datalist id="parking_pos">
+                <option>חנייה לפי האוטונומי</option>
+                <option>חנייה בתוך החצי ריבוע בקצה</option>
+                <option>חנייה בתוך המשולש</option>
+            </datalist>
+
+
+            <h2>TeleOp</h2>
+            <hr>
+            <h2>כמה הם שמו על צומת הכי גבוה</h2>
+            <input type="number" class="info" placeholder="TeleOp כמה הם שמים על צומת הכי גבוה" min="0"
+                json="TeleOp כמה הם שמים על צומת הכי גבוה">
+            <h2>כמה הם שמים על הצומת הבינונית</h2>
+            <input type="number" class="info" placeholder="TeleOp כמה הם שמים על הצומת הבינונית" min="0"
+                json="TeleOp כמה הם שמים על הצומת הבינונית">
+            <h2>כמה הם שמים על צומת הנמוכה</h2>
+            <input type="number" class="info" placeholder="TeleOp כמה הם שמים על צומת הנמוכה" min="0"
+                json="TeleOp כמה הם שמים על צומת הנמוכה">
+            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+            <input type="number" class="info" placeholder="TeleOp כמה קונוסים מכניסים בעמדות השחורות" min="0"
+                json="TeleOp כמה קונוסים מכניסים בעמדות השחורות">
+            <h2>הערות</h2>
+            <input type="text" class="info" placeholder="TeleOp הערות" json="TeleOp הערות">
+            <h2>אנדגיים</h2>
+            <hr>
+            <h2>כמה הם שמו על צומת הכי גבוה</h2>
+            <input type="number" class="info" placeholder="EndGame כמה הם שמים על צומת הכי גבוה" min="0"
+                json="EndGame כמה הם שמים על צומת הכי גבוה">
+            <h2>כמה הם שמים על הצומת הבינונית</h2>
+            <input type="number" class="info" placeholder="EndGame כמה הם שמים על הצומת הבינונית" min="0"
+                json="EndGame כמה הם שמים על הצומת הבינונית">
+            <h2>כמה הם שמים על צומת הנמוכה</h2>
+            <input type="number" class="info" placeholder="EndGame כמה הם שמים על צומת הנמוכה" min="0"
+                json="EndGame כמה הם שמים על צומת הנמוכה">
+            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+            <input type="number" class="info" placeholder="EndGame כמה קונוסים מכניסים בעמדות השחורות" min="0"
+                json="EndGame כמה קונוסים מכניסים בעמדות השחורות">
+            <h2>האם שמו את האלמנט המיוחד שלהם</h2>
+            <input class="info" type="checkbox" title="EndGame האם שמו את האלמנט המיוחד שלהם"
+                placeholder="EndGame האם שמו את האלמנט המיוחד שלהם" json="EndGame האם שמו את האלמנט המיוחד שלהם">
+            <h2>האם הרובוט חנה</h2>
+            <input class="info" type="checkbox" title="האם הרובוט חנה" placeholder="EndGame האם הרובוט חנה"
+                json="EndGame האם הרובוט חנה">
+
             <h2>דרג את הקבוצה מ1 עד 10</h2>
-            <input type="number" min="1" max="10" class="info" placeholder="דירוג">
-
-
+            <input type="number" min="1" max="10" class="info" placeholder="דירוג" json="דירוג">
         </form>
 
-        <button class="button SubButton" onclick="submitValues()" id="sub">Submit</button>
+        <button class="button SubButton" onclick="submitValues(); " id="sub">Submit</button>
+        <script>
+            let inputFields = document.querySelectorAll("input");
+            for (let i = 0; i < inputFields.length; i++) {
+                inputFields[i].setAttribute("json", inputFields[i].getAttribute("placeholder"));
+            }
+        </script>
+        <div id="google_translate_element" class="google_translate_element"></div>
+
+
     </div>
 </body>
 
