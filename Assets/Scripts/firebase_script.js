@@ -15,6 +15,7 @@ const firebaseConfig = {
   appId: "", //insert appId
   measurementId: "" //insert measurementId
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
