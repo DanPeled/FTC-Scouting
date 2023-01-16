@@ -12,17 +12,32 @@ function listToDict(list) { // converts from string to json format.
 
 
 const addValues = (lst) => {
+    let values = [];
     lst.forEach((e, i) => {
         values.push(`${lst[i].getAttribute("json")}: ${e.value}`);
     });
+    return values;
 }
+
+const addRawInputValues = (lst) => {
+    let values = [];
+    list.forEach( e => { values.push(e.value); });
+    return values;
+}
+
 
 const submitValues = () => {
     values = []; // Resetting values
-    addValues(document.querySelectorAll("input"));
+    values = addValues(document.querySelectorAll("input"));
     jsonFormat = listToDict(values);
     console.log(values);
     console.log(jsonFormat);
+    addListOfData(addRawInputValues(document.querySelectorAll("input")));
 };
+
+
+const addListOfData = lst => {
+    
+}
 
 
