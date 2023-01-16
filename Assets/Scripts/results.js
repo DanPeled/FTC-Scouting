@@ -20,9 +20,7 @@ async function updateViewer(collectionPathArray) {
     for (let i = 0; i < objs.length; i++) {
         let tempObjValues = Object.values(objs[i]);
         let tempObjKeys = Object.keys(objs[i]);
-        tempObjKeys = tempObjKeys;
-        tempObjValues = tempObjValues;
-        let nameIndex = 13;
+        let nameIndex = 0;
         for (let x = 0; x < tempObjKeys.length; x++) {
             if (tempObjKeys[x].toString() == "name") {
                 nameIndex = x;

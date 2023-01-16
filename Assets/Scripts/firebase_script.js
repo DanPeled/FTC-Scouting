@@ -167,7 +167,7 @@ const formToObject = (data__ = []) => {
         "cones_placed_on_medium_junction_endgame",
        "cones_placed_on_low_junction_endgame", "cones_placed_on_ground_junctions_endgame", "beacon_placed", "parking_endgame","order_cones_side_to_side",
         "comments_endgame"];
-  fieldNames.sort((a, b) => alphabeticValue(a.replaceAll("_", " ")) - alphabeticValue(b.replaceAll("_", " ")));
+  //fieldNames.sort((a, b) => alphabeticValue(a.replaceAll("_", " ")) - alphabeticValue(b.replaceAll("_", " ")));
   for (let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
     tempObj[fieldNames[i]] = data__[i];
   }
