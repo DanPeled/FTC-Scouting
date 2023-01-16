@@ -148,9 +148,26 @@ const inputsToValues = (lst) => {
   return values;
 }
 
+function alphabeticValue(str__ = "") {
+  let sum = 0;
+  for(let i = 0; i < str__.length; i++) {
+      sum += str__.charCodeAt(i);
+  }
+  return sum;
+}
+
 const formToObject = (data__ = []) => {
   let tempObj = { name: data__[0] };
-  const fieldNames = ["name", "round", "placed_first_cone", "cones_placed_at_terminals_autonomous", "cones_placed_on_high_junction_autonomous", "cones_placed_on_medium_junction_autonomous", "cones_placed_on_low_junction_autonomous", "cones_placed_on_ground_junctions_autonomous", "parked_correctly_autonomous", "parking_autonomous", "cones_placed_at_terminals_teleop", "cones_placed_on_high_junction_teleop", "cones_placed_on_medium_junction_teleop", "cones_placed_on_low_junction_teleop", "cones_placed_on_ground_junctions_teleop", "parked_correctly_teleop", "parking_teleop"];
+  const fieldNames = ["name", "round", "placed_first_cone", "cones_placed_at_terminals_autonomous",
+   "cones_placed_on_high_junction_autonomous", "cones_placed_on_medium_junction_autonomous", "cones_placed_on_low_junction_autonomous",
+    "cones_placed_on_ground_junctions_autonomous", "parked_correctly_autonomous", "parking_autonomous",
+     "cones_placed_at_terminals_teleop", "cones_placed_on_high_junction_teleop", "cones_placed_on_medium_junction_teleop",
+      "cones_placed_on_low_junction_teleop", "cones_placed_on_ground_junctions_teleop", "parked_correctly_teleop",
+       "parking_teleop","comments_teleop", "cones_placed_at_terminals_endgame", "cones_placed_on_high_junction_endgame",
+        "cones_placed_on_medium_junction_endgame",
+       "cones_placed_on_low_junction_endgame", "cones_placed_on_ground_junctions_endgame", "beacon_placed", "parking_endgame","order_cones_side_to_side",
+        "comments_endgame"];
+  fieldNames.sort((a, b) => alphabeticValue(a.replaceAll("_", " ")) - alphabeticValue(b.replaceAll("_", " ")));
   for (let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
     tempObj[fieldNames[i]] = data__[i];
   }

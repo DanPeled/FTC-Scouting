@@ -29,7 +29,8 @@ async function updateViewer(collectionPathArray) {
             }
         }
         resultViewer.innerHTML += `${tempObjKeys[nameIndex]}: ${tempObjValues[nameIndex]} <br>`;
-        for (let w = tempObjKeys.length; w > 0; w--) {
+        tempObjKeys.sort((a, b) => a - b);
+        for (let w = tempObjKeys.length; w > 0; w--) {           
             if (tempObjKeys[w] != undefined && tempObjKeys[w] != "name") {
                 if (tempObjValues[w].toString() == "on") {
                     tempObjValues[w] = "כן"
