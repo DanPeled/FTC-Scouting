@@ -4,6 +4,7 @@
 body {
     justify-content: start;
     gap: 5vh;
+    height: fit-content;
 }
 
 .top, .middle, .bottom {
@@ -62,4 +63,5 @@ div.buttons-wrapper button, button.link {
     text-align: center;
     text-overflow: ellipsis;
     line-break: anywhere;
+    padding-bottom: 3vh;
 }

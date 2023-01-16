@@ -6,7 +6,7 @@
 }
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
@@ -46,6 +46,9 @@ body * {
 body {
   justify-content: start;
   gap: 5vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .top, .middle, .bottom {
@@ -106,4 +109,5 @@ div.buttons-wrapper button:hover, button.link:hover {
   text-align: center;
   text-overflow: ellipsis;
   line-break: anywhere;
-}
+  padding-bottom: 3vh;
+}/*# sourceMappingURL=results.css.map */

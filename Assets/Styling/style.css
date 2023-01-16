@@ -6,7 +6,7 @@
 }
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
@@ -112,4 +112,4 @@ div.center {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
+}/*# sourceMappingURL=style.css.map */
