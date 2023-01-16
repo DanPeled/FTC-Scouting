@@ -33,10 +33,10 @@ export async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
 
 export async function writeDocPath__(collectionNames = [], o_ = {}) {
   var docPath = "";
-  for(let i = 0; i < collectionNames.length; i++) {
+  for (let i = 0; i < collectionNames.length; i++) {
     docPath += collectionNames[i] + "/";
   }
-  docPath = docPath.substring(0,docPath.length-1);
+  docPath = docPath.substring(0, docPath.length - 1);
   console.log(docPath);
   const docRef = await setDoc(doc(db, docPath), o_)
     .then(() => {
@@ -72,7 +72,7 @@ export async function addDoc__(collectionPathArray = [], o_ = {}) {
 
 export function arrayToPath(arr__) {
   var pathStr = "";
-  for(let i = 0; i < arr__.length; i++) {
+  for (let i = 0; i < arr__.length; i++) {
     pathStr += arr__[i] + "/";
   }
   pathStr = pathStr.substring(0, pathStr.length - 1);
@@ -92,7 +92,7 @@ export async function getDoc__(docPathArray) {
 }
 
 export async function getDocs__(collectionPathArray = []) {
-  if(collectionPathArray.length % 2 == 0) {
+  if (collectionPathArray.length % 2 == 0) {
     console.error("There must be an odd number of path directories (getDocs).");
     return null;
   }
@@ -103,7 +103,7 @@ export async function getDocs__(collectionPathArray = []) {
 
 export async function getDocsData__(collectionPathArray = []) {
   let dataArr_ = [];
-  if(collectionPathArray.length % 2 == 0) {
+  if (collectionPathArray.length % 2 == 0) {
     console.error("There must be an odd number of path directories (getDocs).");
     return null;
   }
@@ -130,11 +130,11 @@ export async function deleteDocs__(collectionName, id_) {
 function listToDict(list) { // converts from string to json format.
   var dict = {};
   for (var i = 0; i < list.length; i++) {
-      var parts = list[i].split(': ');
-      var key = parts[0];
-      var value = parts[1];
-      dict[key] = value;
-      console.log(i);
+    var parts = list[i].split(': ');
+    var key = parts[0];
+    var value = parts[1];
+    dict[key] = value;
+    console.log(i);
   }
   return dict;
 }
@@ -143,15 +143,15 @@ function listToDict(list) { // converts from string to json format.
 const inputsToValues = (lst) => {
   let values = [];
   lst.forEach((e, i) => {
-      values.push(lst[i].value);
+    values.push(lst[i].value);
   });
   return values;
 }
 
 const formToObject = (data__ = []) => {
   let tempObj = { name: data__[0] };
-  const fieldNames = ["name", "round", "placed_first_cone", "cones_placed_at_terminals_autonomous", "cones_placed_on_high_junction_autonomous","cones_placed_on_medium_junction_autonomous", "cones_placed_on_low_junction_autonomous","cones_placed_on_ground_junctions_autonomous","parked_correctly_autonomous","parking_autonomous","cones_placed_at_terminals_teleop", "cones_placed_on_high_junction_teleop","cones_placed_on_medium_junction_teleop", "cones_placed_on_low_junction_teleop","cones_placed_on_ground_junctions_teleop","parked_correctly_teleop","parking_teleop"];
-  for(let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
+  const fieldNames = ["name", "round", "placed_first_cone", "cones_placed_at_terminals_autonomous", "cones_placed_on_high_junction_autonomous", "cones_placed_on_medium_junction_autonomous", "cones_placed_on_low_junction_autonomous", "cones_placed_on_ground_junctions_autonomous", "parked_correctly_autonomous", "parking_autonomous", "cones_placed_at_terminals_teleop", "cones_placed_on_high_junction_teleop", "cones_placed_on_medium_junction_teleop", "cones_placed_on_low_junction_teleop", "cones_placed_on_ground_junctions_teleop", "parked_correctly_teleop", "parking_teleop"];
+  for (let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
     tempObj[fieldNames[i]] = data__[i];
   }
   console.log("formObject");
