@@ -3,10 +3,18 @@ import { getDoc__, getDocsData__ } from "./firebase_script.js";
 
 const resultViewer = document.getElementById("result_viewer");
 
+function alphabeticValue(str__ = "") {
+    let sum = 0;
+    for(let i = 0; i < str__.length; i++) {
+        sum += str__.charCodeAt(i);
+    }
+    return sum;
+}
+
 async function updateViewer(collectionPathArray) {
     let objs = await getDocsData__(collectionPathArray);
 
-    
+    objs.sort((a,b) => alphabeticValue(a.name) - alphabeticValue(b.name))
     resultViewer.innerHTML = "";
 
     for (let i = 0; i < objs.length; i++) {
