@@ -26,6 +26,23 @@ body * {
   padding: 0;
 }
 
+.hebrew,
+.hebrew * {
+  font-family: "Varela Round";
+}
+
+::-webkit-scrollbar {
+  width: initial;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(-90deg, hsl(205deg, 100%, 20%) 0%, hsl(205deg, 100%, 30%) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(205deg, 80%, 60%);
+}
+
 p,
 h1,
 h2,
@@ -54,17 +71,12 @@ form * {
   text-align: right;
 }
 
-.hebrew,
-.hebrew * {
-  font-family: "Varela Round";
-}
-
 datalist option {
   font-size: 200%;
   color: black;
 }
 
-div.buttons-wrapper button {
+div.buttons-wrapper button, button.link {
   font-size: 1.4rem;
   background-color: hsla(205deg, 100%, 30%, 0.5);
   color: hsl(205deg, 90%, 70%);
@@ -75,7 +87,7 @@ div.buttons-wrapper button {
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
-div.buttons-wrapper button:hover {
+div.buttons-wrapper button:hover, button.link:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
 
@@ -100,16 +112,4 @@ div.center {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-::-webkit-scrollbar {
-  width: initial;
-}
-
-::-webkit-scrollbar-track {
-  background: linear-gradient(-90deg, hsl(205deg, 100%, 20%) 0%, hsl(205deg, 100%, 30%) 100%);
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(205deg, 80%, 60%);
 }

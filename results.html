@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
     <link rel="stylesheet" href="./Assets/Styling/results.css">
+    <script src="./Assets/Scripts/results.js" type="module" defer></script>
+
 </head>
 <body>
     
     <div class="top">
-        <button class="link" onclick="window.open('./index.html', '_self')">return to form</button>
+        <div class="buttons-wrapper">
+            <button class="link" onclick="window.open('./index.html', '_self')">return to form</button>
+            <button onclick="location.reload()">Refresh</button>
+        </div>
     </div>
     <div class="middle">
-        <h1 class="heading">Results תוצאות:</h1>
-        <div class="results">
+        <h1 class="heading hebrew">Results תוצאות:</h1>
+        <div class="results" id="result_viewer">
 
         </div>
+    </div>
+    <div class="none" style="opacity: 0; width: 0px; height: 0px;">
+        <button id="sub" style="pointer-events: none; position:fixed; "></button>    
     </div>
 </body>
 </html>

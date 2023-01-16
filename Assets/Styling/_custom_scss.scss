@@ -51,3 +51,20 @@ body {
 
     @include flexing();
 }
+
+.hebrew,
+.hebrew * {
+    font-family: "Varela Round";
+}
+
+::-webkit-scrollbar {
+    width: initial;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(-90deg, getCC(10, 2) 0%, getCC(10, 3) 100%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: getCC(8, 6);
+}

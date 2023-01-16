@@ -6,7 +6,7 @@ import { getFirestore, doc, getDoc, setDoc, collection, updateDoc, deleteDoc, de
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyAx3yqOSfyTrKJYQ10Tq73UtIQmusj3z1k",
   authDomain: "scounting16473.firebaseapp.com",
   projectId: "scounting16473",
@@ -16,13 +16,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore();
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore();
 console.log(app);
 
 
 // works, tested
-async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
+export async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
   const docRef = await setDoc(doc(db, `${collectionName}/${id}`), o_)
     .then(() => {
       console.log("Data set successfully");
@@ -31,7 +31,7 @@ async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
     });
 }
 
-async function writeDocPath__(collectionNames = [], o_ = {}) {
+export async function writeDocPath__(collectionNames = [], o_ = {}) {
   var docPath = "";
   for(let i = 0; i < collectionNames.length; i++) {
     docPath += collectionNames[i] + "/";
@@ -46,7 +46,7 @@ async function writeDocPath__(collectionNames = [], o_ = {}) {
     });
 }
 
-async function addDoc__(collectionPathArray = [], o_ = {}) {
+export async function addDoc__(collectionPathArray = [], o_ = {}) {
   const docRef = await addDoc(collection(db, arrayToPath(collectionPathArray)), o_);
   return docRef;
 }
@@ -70,7 +70,7 @@ async function addDoc__(collectionPathArray = [], o_ = {}) {
 //   }
 // }
 
-function arrayToPath(arr__) {
+export function arrayToPath(arr__) {
   var pathStr = "";
   for(let i = 0; i < arr__.length; i++) {
     pathStr += arr__[i] + "/";
@@ -81,7 +81,7 @@ function arrayToPath(arr__) {
 
 // works, tested;
 
-async function getDoc__(docPathArray) {
+export async function getDoc__(docPathArray) {
   const docSnap = await getDoc(doc(db, arrayToPath(docPathArray)));
   if (docSnap.exists()) {
     console.log("transmitting data");
@@ -91,8 +91,33 @@ async function getDoc__(docPathArray) {
   }
 }
 
+export async function getDocs__(collectionPathArray = []) {
+  if(collectionPathArray.length % 2 == 0) {
+    console.error("There must be an odd number of path directories (getDocs).");
+    return null;
+  }
+  const docsSnap = await getDocs(collection(db, arrayToPath(collectionPathArray)));
+  console.log("collected data successfully");
+  return docsSnap;
+}
+
+export async function getDocsData__(collectionPathArray = []) {
+  let dataArr_ = [];
+  if(collectionPathArray.length % 2 == 0) {
+    console.error("There must be an odd number of path directories (getDocs).");
+    return null;
+  }
+  const docsSnap = await getDocs(collection(db, arrayToPath(collectionPathArray)));
+  docsSnap.forEach(doc => {
+    dataArr_.push(doc.data());
+  });
+  console.log("collected data successfully");
+  console.log(dataArr_);
+  return dataArr_;
+}
+
 // hasn't been tested yet
-async function deleteDocs__(collectionName, id_) {
+export async function deleteDocs__(collectionName, id_) {
   try {
     await deleteDoc(doc(db, collectionName, id_));
   } catch (error) {
@@ -125,7 +150,7 @@ const inputsToValues = (lst) => {
 
 const formToObject = (data__ = []) => {
   let tempObj = { name: data__[0] };
-  const fieldNames = ["name", "round", "placedFirstCone", "conesPlacedAtTerminals"];
+  const fieldNames = ["name", "round", "placed_first_cone", "cones_placed_at_terminals_autonomous", "cones_placed_on_high_junction_autonomous","cones_placed_on_medium_junction_autonomous", "cones_placed_on_low_junction_autonomous","cones_placed_on_ground_junctions_autonomous","parked_correctly_autonomous","parking_autonomous","cones_placed_at_terminals_teleop", "cones_placed_on_high_junction_teleop","cones_placed_on_medium_junction_teleop", "cones_placed_on_low_junction_teleop","cones_placed_on_ground_junctions_teleop","parked_correctly_teleop","parking_teleop"];
   for(let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
     tempObj[fieldNames[i]] = data__[i];
   }

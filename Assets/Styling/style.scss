@@ -27,17 +27,12 @@ form {
     }
 }
 
-.hebrew,
-.hebrew * {
-    font-family: "Varela Round";
-}
-
 datalist option {
     font-size: 200%;
     color: black;
 }
 
-div.buttons-wrapper button {
+div.buttons-wrapper button, button.link {
     font-size: 1.4rem;
 
     background-color: getCC(light, 3, 0.5);
@@ -74,16 +69,4 @@ div.center {
     width: fit-content;
     min-height: 100vh;
     height: fit-content;
-}
-
-::-webkit-scrollbar {
-    width: initial;
-}
-
-::-webkit-scrollbar-track {
-    background: linear-gradient(-90deg, getCC(10, 2) 0%, getCC(10, 3) 100%);
-}
-
-::-webkit-scrollbar-thumb {
-    background: getCC(8, 6);
 }
