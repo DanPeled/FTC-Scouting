@@ -5,13 +5,22 @@ const resultViewer = document.getElementById("result_viewer");
 
 async function updateViewer(collectionPathArray) {
     let objs = await getDocsData__(collectionPathArray);
-    let nameIndex = binarySearch(tempObjKeys, "name");
+
+    
     resultViewer.innerHTML = "";
+
     for (let i = 0; i < objs.length; i++) {
         let tempObjValues = Object.values(objs[i]);
         let tempObjKeys = Object.keys(objs[i]);
+        tempObjKeys = tempObjKeys;
+        tempObjValues = tempObjValues;
+        let nameIndex = 13;
+        for (let x = 0; x < tempObjKeys.length; x++) {
+            if (tempObjKeys[x].toString() == "name") {
+                nameIndex = x;
+            }
+        }
         resultViewer.innerHTML += `${tempObjKeys[nameIndex]}: ${tempObjValues[nameIndex]} <br>`;
-
         for (let w = tempObjKeys.length; w > 0; w--) {
             if (tempObjKeys[w] != undefined && tempObjKeys[w] != "name") {
                 if (tempObjValues[w].toString() == "on") {
@@ -26,35 +35,11 @@ async function updateViewer(collectionPathArray) {
         }
         resultViewer.innerHTML += "<br><br>";
     }
-    console.log(nameIndex);
     console.log("updating data");
+
 }
 
 window.addEventListener("load", eve => {
     updateViewer(["formData"]);
 });
-
-
-
-
-
-
-function binarySearch(array, target) {
-    let left = 0;
-    let right = array.length - 1;
-
-    while (left <= right) {
-        let middle = Math.floor((left + right) / 2);
-
-        if (array[middle] === target) {
-            return middle;
-        } else if (array[middle] < target) {
-            left = middle + 1;
-        } else {
-            right = middle - 1;
-        }
-    }
-
-    return -1;
-}
 
