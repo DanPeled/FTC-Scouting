@@ -168,6 +168,7 @@ const submitValues = () => {
   console.log(values);
   console.log(jsonFormat);
   addListOfData(inputsToValues(document.querySelectorAll("input")));
+  alert("Form Submitted!");
 };
 
 const submitButton = document.querySelector("button#sub");
