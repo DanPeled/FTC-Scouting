@@ -31,3 +31,23 @@ $saturation-values: (
     font-weight: 400;
     font-style: normal;
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    background-color: getCC(5, 3);
+
+    * {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include flexing();
+}

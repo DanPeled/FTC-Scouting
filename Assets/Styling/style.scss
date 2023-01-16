@@ -1,27 +1,6 @@
 @import "custom_scss";
 
 
-
-body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: row;
-    background-color: getCC(5, 3);
-
-    * {
-        position: relative;
-        margin: 0;
-        padding: 0;
-    }
-
-    @include flexing();
-}
-
 p,
 h1,
 h2,
@@ -58,7 +37,7 @@ datalist option {
     color: black;
 }
 
-button.SubButton {
+div.buttons-wrapper button {
     font-size: 1.4rem;
 
     background-color: getCC(light, 3, 0.5);

@@ -8,8 +8,8 @@
     <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>Scouting 2023</title>
     <link rel="stylesheet" href="./Assets/Styling/style.css">
-    <script src="./Assets/Scripts/forms.js"></script>
-    <script src="./Assets/Scripts/firebase_script.js" type="module" defer></script>
+    <script src="./Assets/Scripts/firebase_script.js" type="module" ></script>
+    <!-- <script src="./Assets/Scripts/firebase_script.js" type="module" defer></script> -->
     <script type="text/javascript"
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
         </script>
@@ -154,8 +154,12 @@
             <h2>דרג את הקבוצה מ1 עד 10</h2>
             <input type="number" min="1" max="10" class="info" placeholder="דירוג" json="דירוג">
         </form>
-
-        <button class="button SubButton" onclick="submitValues(); " id="sub">Submit</button>
+        <div class="buttons-wrapper">
+            <button class="button SubButton" id="sub">Submit</button>
+            <button class="link" onclick="window.open('./results.html','_self')">See Results</button>
+        </div>
+        
+        
         <script>
             let inputFields = document.querySelectorAll("input");
             for (let i = 0; i < inputFields.length; i++) {

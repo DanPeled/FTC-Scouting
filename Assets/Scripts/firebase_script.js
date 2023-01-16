@@ -1,19 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, getDocs, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, setDoc, collection, updateDoc, deleteDoc, deleteField, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAnf5Hkdqhk5tNc1CLzOlaUz5VQnvHBSaY",
-  authDomain: "scouting-2023ftc.firebaseapp.com",
-  projectId: "scouting-2023ftc",
-  storageBucket: "scouting-2023ftc.appspot.com",
-  messagingSenderId: "1054772324553",
-  appId: "1:1054772324553:web:adb8956216bcb82a218518",
-  measurementId: "G-WD5T1X8NH3"
+  apiKey: "AIzaSyAx3yqOSfyTrKJYQ10Tq73UtIQmusj3z1k",
+  authDomain: "scounting16473.firebaseapp.com",
+  projectId: "scounting16473",
+  storageBucket: "scounting16473.appspot.com",
+  messagingSenderId: "899338740838",
+  appId: "1:899338740838:web:f32c8ab117e28fe039b9a7",
 };
 
 // Initialize Firebase
@@ -24,7 +23,7 @@ console.log(app);
 
 // works, tested
 async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
-  const docRef = await setDoc(doc(db, collectionName, id_, "TEST23"), o_)
+  const docRef = await setDoc(doc(db, `${collectionName}/${id}`), o_)
     .then(() => {
       console.log("Data set successfully");
     }).catch((error) => {
@@ -32,46 +31,58 @@ async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
     });
 }
 
-// works, tested
-async function getDocRef__(collectionName) {
-  if (collectionName.length % 2 == 0) {
-    let docRef = doc(db, collectionName[0], collectionName[1]);
-    for (let index = 2; index < collectionName.length; index += 2) {
-      docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
-    }
-    return docRef;
-  } else if (collectionName.length % 2 == 1) {
-    let docRef = doc(db);
-    for (let index = 0; index < collectionName.length - 1; index += 2) {
-      docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
-    }
-    const querySnapshot = await getDocs(collection(docRef, collectionName[collectionName.length - 1]));
-    return querySnapshot;
+async function writeDocPath__(collectionNames = [], o_ = {}) {
+  var docPath = "";
+  for(let i = 0; i < collectionNames.length; i++) {
+    docPath += collectionNames[i] + "/";
   }
+  docPath = docPath.substring(0,docPath.length-1);
+  console.log(docPath);
+  const docRef = await setDoc(doc(db, docPath), o_)
+    .then(() => {
+      console.log("Data set successfully");
+    }).catch((error) => {
+      console.log("Operation failed; error: " + error);
+    });
 }
 
-// Hasn't been tested yet...
-// async function writeDoc__(collectionName, o_ = {}) {
-//   if(collectionName.length % 2 != 0) {
-//     console.error("collectionNames (length) is unexecutable for search (due to uneven amount of collections and documents)");
-//     return;
+async function addDoc__(collectionPathArray = [], o_ = {}) {
+  const docRef = await addDoc(collection(db, arrayToPath(collectionPathArray)), o_);
+  return docRef;
+}
+
+
+// works, tested
+// async function getDocRef__(collectionName) {
+//   if (collectionName.length % 2 == 0) {
+//     let docRef = doc(db, collectionName[0], collectionName[1]);
+//     for (let index = 2; index < collectionName.length; index += 2) {
+//       docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
+//     }
+//     return docRef;
+//   } else if (collectionName.length % 2 == 1) {
+//     let docRef = doc(db);
+//     for (let index = 0; index < collectionName.length - 1; index += 2) {
+//       docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
+//     }
+//     const querySnapshot = await getDocs(collection(docRef, collectionName[collectionName.length - 1]));
+//     return querySnapshot;
 //   }
-//   let docRef = doc(db, collectionName[0], collectionName[1]);
-//   for (let index = 2; index < collectionName.length; index += 2) {
-//     docRef = await doc(docRef, collectionName[index], collectionName[index + 1]);
-//   };  
-//   docRef = await setDoc(docRef, o_)
-//     .then(() => {
-//       console.log("Data set successfully");
-//     }).catch((error) => {
-//       console.log("Operation failed; error: " + error);
-//     });
 // }
+
+function arrayToPath(arr__) {
+  var pathStr = "";
+  for(let i = 0; i < arr__.length; i++) {
+    pathStr += arr__[i] + "/";
+  }
+  pathStr = pathStr.substring(0, pathStr.length - 1);
+  return pathStr;
+}
 
 // works, tested;
 
-async function getDoc__(collectionName, id_) {
-  const docSnap = await getDoc(doc(db, collectionName, id_));
+async function getDoc__(docPathArray) {
+  const docSnap = await getDoc(doc(db, arrayToPath(docPathArray)));
   if (docSnap.exists()) {
     console.log("transmitting data");
     return docSnap.data();
@@ -90,3 +101,56 @@ async function deleteDocs__(collectionName, id_) {
   }
   console.log("Successfully deleted: " + id_);
 }
+
+function listToDict(list) { // converts from string to json format.
+  var dict = {};
+  for (var i = 0; i < list.length; i++) {
+      var parts = list[i].split(': ');
+      var key = parts[0];
+      var value = parts[1];
+      dict[key] = value;
+      console.log(i);
+  }
+  return dict;
+}
+
+
+const inputsToValues = (lst) => {
+  let values = [];
+  lst.forEach((e, i) => {
+      values.push(lst[i].value);
+  });
+  return values;
+}
+
+const formToObject = (data__ = []) => {
+  let tempObj = { name: data__[0] };
+  const fieldNames = ["name", "round", "placedFirstCone", "conesPlacedAtTerminals"];
+  for(let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
+    tempObj[fieldNames[i]] = data__[i];
+  }
+  console.log("formObject");
+  console.log(data__);
+  console.log(tempObj);
+  return tempObj;
+}
+
+
+const submitValues = () => {
+  let values = []; // Resetting values
+  values = inputsToValues(document.querySelectorAll("input"));
+  let jsonFormat = listToDict(values);
+  console.log(values);
+  console.log(jsonFormat);
+  addListOfData(inputsToValues(document.querySelectorAll("input")));
+};
+
+const submitButton = document.querySelector("button#sub");
+submitButton.addEventListener("click", () => {
+  submitValues();
+});
+
+const addListOfData = lst => {
+  addDoc__(["formData"], formToObject(lst));
+}
+

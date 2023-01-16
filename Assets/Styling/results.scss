@@ -1,0 +1,10 @@
+@import "./custom_scss";
+
+
+
+.top {
+    background-color: getCC(5,4);
+    width: 100%;
+    @include flexing(column);
+    height: 10vh;
+}
