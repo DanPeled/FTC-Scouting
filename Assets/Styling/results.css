@@ -13,7 +13,7 @@ body {
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  background-color: hsl(205deg, 50%, 30%);
+  background-color: hsl(205deg, 70%, 24%);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -69,7 +69,7 @@ body {
 }
 
 div.middle {
-  background-color: hsl(205deg, 50%, 40%);
+  background-color: hsl(205deg, 60%, 30%);
 }
 div.middle h1 {
   text-decoration: underline;
@@ -100,6 +100,7 @@ div.buttons-wrapper button:hover, button.link:hover {
 
 #result_viewer {
   font-size: 125%;
+  line-height: 1.4em;
   color: hsl(205deg, 100%, 90%);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 50vh;
@@ -110,4 +111,4 @@ div.buttons-wrapper button:hover, button.link:hover {
   text-overflow: ellipsis;
   line-break: anywhere;
   padding-bottom: 3vh;
-}/*# sourceMappingURL=results.css.map */
+}

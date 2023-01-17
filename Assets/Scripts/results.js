@@ -13,35 +13,16 @@ function alphabeticValue(str__ = "") {
 
 async function updateViewer(collectionPathArray) {
     let objs = await getDocsData__(collectionPathArray);
-
-    objs.sort((a,b) => alphabeticValue(a.name) - alphabeticValue(b.name))
+    objs.sort((obj1, obj2) => alphabeticValue(obj2.properties[0].value) - alphabeticValue(obj1.properties[0].value));
     resultViewer.innerHTML = "";
 
     for (let i = 0; i < objs.length; i++) {
-        let tempObjValues = Object.values(objs[i]);
-        let tempObjKeys = Object.keys(objs[i]);
-        let nameIndex = 0;
-        for (let x = 0; x < tempObjKeys.length; x++) {
-            if (tempObjKeys[x].toString() == "name") {
-                nameIndex = x;
-            }
-        }
-        resultViewer.innerHTML += `${tempObjKeys[nameIndex]}: ${tempObjValues[nameIndex]} <br>`;
-        tempObjKeys.sort((a, b) => a - b);
-        for (let w = tempObjKeys.length; w > 0; w--) {           
-            if (tempObjKeys[w] != undefined && tempObjKeys[w] != "name") {
-                if (tempObjValues[w].toString() == "on") {
-                    tempObjValues[w] = "כן"
-                }
-                if (tempObjValues[w].toString() == "off") {
-                    tempObjValues[w] = "לא"
-                }
-                resultViewer.innerHTML += `${tempObjKeys[w].replaceAll("_", " ")}: ${tempObjValues[w]} <br>`;
-            }
-            console.log(resultViewer.innerHTML);
+        for(let j = 0; j < objs[i].properties.length; j++) {
+            resultViewer.innerHTML += `${objs[i].properties[j].label}: ${objs[i].properties[j].value} <br>`;
         }
         resultViewer.innerHTML += "<br><br>";
     }
+    
     console.log("updating data");
 
 }

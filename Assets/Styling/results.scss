@@ -24,7 +24,7 @@ div.middle {
     h1 {
         text-decoration: underline;
     }
-    background-color: getCC(5,4);
+    background-color: getCC(6,3);
 }
 
 p,
@@ -56,6 +56,7 @@ div.buttons-wrapper button, button.link {
 
 #result_viewer {
     font-size: 125%;
+    line-height: 1.4em;
     color: getCC(10,9);
     font-family: Arial, Helvetica, sans-serif;
     min-height: 50vh;

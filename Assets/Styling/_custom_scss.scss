@@ -41,7 +41,7 @@ body {
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
-    background-color: getCC(5, 3);
+    background-color: getCC(7, 2, 1, 0deg, 0, 4);
 
     * {
         position: relative;

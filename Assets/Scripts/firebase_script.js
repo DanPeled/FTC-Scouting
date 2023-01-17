@@ -127,25 +127,15 @@ export async function deleteDocs__(collectionName, id_) {
   console.log("Successfully deleted: " + id_);
 }
 
-function listToDict(list) { // converts from string to json format.
-  var dict = {};
-  for (var i = 0; i < list.length; i++) {
-    var parts = list[i].split(': ');
-    var key = parts[0];
-    var value = parts[1];
-    dict[key] = value;
-    console.log(i);
-  }
-  return dict;
-}
-
-
 const inputsToValues = (lst) => {
   let values = [];
   lst.forEach((e, i) => {
-    values.push(lst[i].value);
+    values.push({ 
+      value: lst[i].value, 
+      index: parseInt(lst[i].getAttribute("data-input-index")), 
+      label: lst[i].getAttribute("data-tag")});
   });
-  return values;
+  return {properties: values};
 }
 
 function alphabeticValue(str__ = "") {
@@ -169,7 +159,7 @@ const formToObject = (data__ = []) => {
         "comments_endgame"];
   //fieldNames.sort((a, b) => alphabeticValue(a.replaceAll("_", " ")) - alphabeticValue(b.replaceAll("_", " ")));
   for (let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
-    tempObj[fieldNames[i]] = data__[i];
+    tempObj[fieldNames[i]] = data__[i].value;
   }
   console.log("formObject");
   console.log(data__);
@@ -179,12 +169,10 @@ const formToObject = (data__ = []) => {
 
 
 const submitValues = () => {
-  let values = []; // Resetting values
-  values = inputsToValues(document.querySelectorAll("input"));
-  let jsonFormat = listToDict(values);
-  console.log(values);
-  console.log(jsonFormat);
-  addListOfData(inputsToValues(document.querySelectorAll("input")));
+  let inputs = [];
+  inputs = inputsToValues(document.querySelectorAll("input"));
+  // inputs.sort((a,b) => a.index - b.index);
+  addListOfData(inputs);
   alert("Form Submitted!");
 };
 
@@ -194,6 +182,6 @@ submitButton.addEventListener("click", () => {
 });
 
 const addListOfData = lst => {
-  addDoc__(["formData"], formToObject(lst));
+  addDoc__(["formData"], lst);
 }
 

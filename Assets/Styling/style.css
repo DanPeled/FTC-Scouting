@@ -13,7 +13,7 @@ body {
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  background-color: hsl(205deg, 50%, 30%);
+  background-color: hsl(205deg, 70%, 24%);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -112,4 +112,4 @@ div.center {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}/*# sourceMappingURL=style.css.map */
+}
