@@ -18,7 +18,7 @@ async function updateViewer(collectionPathArray) {
 
     for (let i = 0; i < objs.length; i++) {
         for(let j = 0; j < objs[i].properties.length; j++) {
-            resultViewer.innerHTML += `${objs[i].properties[j].label}: ${objs[i].properties[j].value} <br>`;
+            resultViewer.innerHTML += `<h3 style="display: inline;">${objs[i].properties[j].label}: </h3><p style="display: inline;" class="hebrew">${objs[i].properties[j].value}</p> <br>`;
         }
         resultViewer.innerHTML += "<br><br>";
     }

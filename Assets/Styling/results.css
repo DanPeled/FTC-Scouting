@@ -99,7 +99,7 @@ div.buttons-wrapper button:hover, button.link:hover {
 }
 
 #result_viewer {
-  font-size: 125%;
+  font-size: 100%;
   line-height: 1.4em;
   color: hsl(205deg, 100%, 90%);
   font-family: Arial, Helvetica, sans-serif;
@@ -109,6 +109,16 @@ div.buttons-wrapper button:hover, button.link:hover {
   height: fit-content;
   text-align: center;
   text-overflow: ellipsis;
+  word-wrap: normal;
+  white-space: initial;
   line-break: anywhere;
   padding-bottom: 3vh;
+}
+#result_viewer p, #result_viewer h3 {
+  font-size: 1.1rem;
+  word-break: keep-all;
+  color: #b3e6ff;
+}
+#result_viewer h3 {
+  color: #cfe9fc;
 }

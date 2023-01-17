@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 
 $main-hue: 205deg; // previously 205deg
 
@@ -15,6 +16,7 @@ $saturation-values: (
 @function getCC($saturation: 5, $lightness: 5, $opacity: 1, $adjust-hue: 0deg, $saturation-add: 0, $lightness-add: 0) {
     @return hsla($main-hue + $adjust-hue, (map.get($saturation-values, $saturation) + $saturation-add) * 1%, (map.get($lightness-values, $lightness) + $lightness-add) * 1%, $opacity);
 }
+
 
 @mixin flexing($direction: column, $spacing: space-around, $alignment: center, $item-alignment: center) {
     display: flex;
@@ -68,3 +70,5 @@ body {
 ::-webkit-scrollbar-thumb {
     background: getCC(8, 6);
 }
+
+
