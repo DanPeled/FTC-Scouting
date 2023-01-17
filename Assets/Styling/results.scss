@@ -69,7 +69,8 @@ div.buttons-wrapper button, button.link {
     white-space: initial;
     line-break: anywhere;
     padding-bottom: 3vh;
-
+    text-align: left;
+    margin: 0em 1.2vw;
     p, h3 {
         font-size: 1.1rem;
         word-break: keep-all;
@@ -78,5 +79,11 @@ div.buttons-wrapper button, button.link {
 
     h3 {
         color: color.adjust($foreground, $saturation: -10%);
+    }
+
+    div.result_encapsulator {
+        border-bottom: 1em getCC(6,5) solid;
+        border-radius: 2em;
+        margin: 1em 0em 2em;
     }
 }

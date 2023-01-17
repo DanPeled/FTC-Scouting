@@ -133,7 +133,9 @@ const inputsToValues = (lst) => {
     values.push({ 
       value: lst[i].value, 
       index: parseInt(lst[i].getAttribute("data-input-index")), 
-      label: lst[i].getAttribute("data-tag")});
+      label: lst[i].getAttribute("data-tag"),
+      hebrewLabel: lst[i].getAttribute("placeholder")
+    });
   });
   return {properties: values};
 }
@@ -145,28 +147,6 @@ function alphabeticValue(str__ = "") {
   }
   return sum;
 }
-
-const formToObject = (data__ = []) => {
-  let tempObj = { name: data__[0] };
-  const fieldNames = ["name", "round", "placed_first_cone", "cones_placed_at_terminals_autonomous",
-   "cones_placed_on_high_junction_autonomous", "cones_placed_on_medium_junction_autonomous", "cones_placed_on_low_junction_autonomous",
-    "cones_placed_on_ground_junctions_autonomous", "parked_correctly_autonomous", "parking_autonomous",
-     "cones_placed_at_terminals_teleop", "cones_placed_on_high_junction_teleop", "cones_placed_on_medium_junction_teleop",
-      "cones_placed_on_low_junction_teleop", "cones_placed_on_ground_junctions_teleop", "parked_correctly_teleop",
-       "parking_teleop","comments_teleop", "cones_placed_at_terminals_endgame", "cones_placed_on_high_junction_endgame",
-        "cones_placed_on_medium_junction_endgame",
-       "cones_placed_on_low_junction_endgame", "cones_placed_on_ground_junctions_endgame", "beacon_placed", "parking_endgame","order_cones_side_to_side",
-        "comments_endgame"];
-  //fieldNames.sort((a, b) => alphabeticValue(a.replaceAll("_", " ")) - alphabeticValue(b.replaceAll("_", " ")));
-  for (let i = 1; i < Math.min(fieldNames.length, data__.length); i++) {
-    tempObj[fieldNames[i]] = data__[i].value;
-  }
-  console.log("formObject");
-  console.log(data__);
-  console.log(tempObj);
-  return tempObj;
-}
-
 
 const submitValues = () => {
   let inputs = [];

@@ -2,25 +2,21 @@ import { getFirestore, doc, getDoc, setDoc, collection, updateDoc, deleteDoc, de
 import { getDoc__, getDocsData__ } from "./firebase_script.js";
 
 const resultViewer = document.getElementById("result_viewer");
+const defaultDir = ["formData"];
 
-function alphabeticValue(str__ = "") {
-    let sum = 0;
-    for(let i = 0; i < str__.length; i++) {
-        sum += str__.charCodeAt(i);
-    }
-    return sum;
-}
-
-async function updateViewer(collectionPathArray) {
+async function updateViewer(collectionPathArray = defaultDir) {
     let objs = await getDocsData__(collectionPathArray);
-    objs.sort((obj1, obj2) => alphabeticValue(obj2.properties[0].value) - alphabeticValue(obj1.properties[0].value));
+    objs.sort((obj1, obj2) => { // Name sorting algorithm
+        let name1 = obj1.properties[0].value.toLocaleLowerCase(), name2 = obj2.properties[0].value.toLocaleLowerCase();
+        if(name1 > name2) return 1; if(name1 < name2) return -1; return 0;
+    });
     resultViewer.innerHTML = "";
-
     for (let i = 0; i < objs.length; i++) {
+        resultViewer.innerHTML += `<div class="result_encapsulator">`;
         for(let j = 0; j < objs[i].properties.length; j++) {
-            resultViewer.innerHTML += `<h3 style="display: inline;">${objs[i].properties[j].label}: </h3><p style="display: inline;" class="hebrew">${objs[i].properties[j].value}</p> <br>`;
+            resultViewer.innerHTML += `<h3 style="display: inline;" class="hebrew">${objs[i].properties[j].hebrewLabel}: </h3><p style="display: inline;" class="hebrew">${objs[i].properties[j].value}</p> <br>`;
         }
-        resultViewer.innerHTML += "<br><br>";
+        resultViewer.innerHTML += `</div>`;
     }
     
     console.log("updating data");
@@ -28,6 +24,9 @@ async function updateViewer(collectionPathArray) {
 }
 
 window.addEventListener("load", eve => {
-    updateViewer(["formData"]);
+    updateViewer();
+});
+document.getElementById("refresh").addEventListener("click", (ev) => {
+    updateViewer();
 });
 
