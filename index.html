@@ -24,12 +24,12 @@
     <div class="center">
         <form class="hebrew">
             <h2>שם קבוצה ומספר</h2>
-            <input data-tag="name" data-input-index="0" type="text" class="info" id="name" list="teams_suggest" placeholder="שם קבוצה ומספר"
-                json="שם קבוצה ומספר" index="0" required>
+            <input data-tag="name" data-input-index="0" type="text" class="info" id="name" list="teams_suggest"
+                placeholder="שם קבוצה ומספר" json="שם קבוצה ומספר" index="0" required>
             <datalist id="teams_suggest">
                 <option id='Boosteam#15811'>Boosteam#15811</option>
                 <option id='RinGoStar #18735 '>RinGoStar #18735 </option>
-                <option id='connection#11808 '>connection#11808 </option>
+                <option id='Connection#11808 '>connection#11808 </option>
                 <option id='TATOOINE #12201'>TATOOINE #12201</option>
                 <option id='Apollo #9662'>Apollo #9662</option>
                 <option id='Quack attack #11635 '>Quack attack #11635 </option>
@@ -42,101 +42,124 @@
                 <option id='OrangeFox#12363'>OrangeFox#12363</option>
                 <option id='ATRobotics #21850'>ATRobotics #21850</option>
                 <option id='Hydra team #22947'>Hydra team #22947</option>
-                <option id=' #18833 Megiddo lions'>#18833 Megiddo lions</option>
-                <option id='scifighters#16473'>scifighters#16473</option>
-                <option id='Megiddo lions#12797'>Megiddo lions#12797</option>
+                <option id='Megiddo lions #18833'>#18833 Megiddo lions</option>
+                <option id='SciFighters #16473'>scifighters#16473</option>
+                <option id='Megiddo lions #12797'>Megiddo lions#12797</option>
             </datalist>
             <h2>מקצה</h2>
-            <input data-tag="round" data-input-index="1" type="number" class="info" placeholder="מקצה" min="0" json="מקצה" index="1">
-            <h2>אוטנומי</h2>
-            <hr>
-            <h2>שמו את הקונוס הראשון</h2>
-            <input data-tag="Placed first cone" data-input-index="2" type="checkbox" title="שמו את הקונוס הראשון" placeholder="שמו את הקונוס הראשון אוטנומי"
-                json="שמו את הקונוס הראשון אוטנומי" index="2">
-            <h2>כמות של קונוסים ששמו במשולש בקצה</h2>
-            <input data-tag="Cones placed in terminals-autonomous" data-input-index="3" type="number" class="info" placeholder="כמות של קונוסים ששמו במשולש בקצה אוטנומי" min="0"
-                json="כמות של קונוסים ששמו במשולש בקצה אוטנומי" index="3">
-            <h2>כמה הם שמו על צומת הכי גבוה</h2>
-            <input data-tag="Cones placed on high junctions-autonomous" data-input-index="4" type="number" class="info" placeholder="כמה הם שמים על צומת הכי גבוה אוטנומי" min="0"
-                json="כמה הם שמים על צומת הכי גבוה אוטנומי" index="4">
-            <h2>כמה הם שמים על הצומת הבינונית</h2>
-            <input data-tag="Cones placed on medium junctions-autonomous" data-input-index="5" type="number" class="info" placeholder="כמה הם שמים על הצומת הבינונית אוטנומי" min="0"
-                json="כמה הם שמים על הצומת הבינונית אוטנומי" index="5">
-            <h2>כמה הם שמים על צומת הנמוכה</h2>
-            <input data-tag="Cones placed on low junctions-autonomous" data-input-index="6" type="number" class="info" placeholder="כמה הם שמים על צומת הנמוכה אוטנומי" min="0"
-                json="כמה הם שמים על צומת הנמוכה אוטנומי" index="6">
-            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
-            <input data-tag="Cones placed on ground junctions-autonomous" data-input-index="7" type="number" class="info" placeholder="כמה קונוסים מכניסים בעמדות השחורות אוטנומי" min="0"
-                json="כמה קונוסים מכניסים בעמדות השחורות אוטנומי" index="7">
-            <h2>מיקום חניה נכון</h2>
-            <input data-tag="Correct parking-autonomous" data-input-index="8" type="checkbox" class="info" id="name" placeholder="מיקום חניה נכון אוטנומי"
-                json="מיקום חניה נכון אוטנומי" index="8">
-            <h2>חנייה</h2>
-            <input data-tag="parking-autonomous" data-input-index="9" type="text" class="info" id="name" list="parking_pos" placeholder="חנייה אוטנומי" required=""
-                json="חנייה אוטנומי" index="9">
-            <datalist id="parking_pos">
-                <option>חנייה לפי האוטונומי</option>
-                <option>חנייה בתוך החצי ריבוע בקצה</option>
-                <option>חנייה בתוך המשולש</option>
-            </datalist>
+            <input data-tag="round" data-input-index="1" type="number" class="info" placeholder="מקצה" min="0"
+                json="מקצה" index="1">
+            <h2>אוטנומי</h2+>
+                <hr>
+                <h2>שמו את הקונוס הראשון</h2>
+                <input data-tag="Placed first cone" data-input-index="2" type="checkbox" title="שמו את הקונוס הראשון"
+                    placeholder="שמו את הקונוס הראשון אוטנומי" json="שמו את הקונוס הראשון אוטנומי" index="2">
+                <h2>כמות של קונוסים ששמו במשולש בקצה</h2>
+                <input data-tag="Cones placed in terminals-autonomous" data-input-index="3" type="number" class="info"
+                    placeholder="כמות של קונוסים ששמו במשולש בקצה אוטנומי" min="0"
+                    json="כמות של קונוסים ששמו במשולש בקצה אוטנומי" index="3">
+                <h2>כמה הם שמו על צומת הכי גבוה</h2>
+                <input data-tag="Cones placed on high junctions-autonomous" data-input-index="4" type="number"
+                    class="info" placeholder="כמה הם שמים על צומת הכי גבוה אוטנומי" min="0"
+                    json="כמה הם שמים על צומת הכי גבוה אוטנומי" index="4">
+                <h2>כמה הם שמים על הצומת הבינונית</h2>
+                <input data-tag="Cones placed on medium junctions-autonomous" data-input-index="5" type="number"
+                    class="info" placeholder="כמה הם שמים על הצומת הבינונית אוטנומי" min="0"
+                    json="כמה הם שמים על הצומת הבינונית אוטנומי" index="5">
+                <h2>כמה הם שמים על צומת הנמוכה</h2>
+                <input data-tag="Cones placed on low junctions-autonomous" data-input-index="6" type="number"
+                    class="info" placeholder="כמה הם שמים על צומת הנמוכה אוטנומי" min="0"
+                    json="כמה הם שמים על צומת הנמוכה אוטנומי" index="6">
+                <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+                <input data-tag="Cones placed on ground junctions-autonomous" data-input-index="7" type="number"
+                    class="info" placeholder="כמה קונוסים מכניסים בעמדות השחורות אוטנומי" min="0"
+                    json="כמה קונוסים מכניסים בעמדות השחורות אוטנומי" index="7">
+                <h2>מיקום חניה נכון</h2>
+                <input data-tag="Correct parking-autonomous" data-input-index="8" type="checkbox" class="info" id="name"
+                    placeholder="מיקום חניה נכון אוטנומי" json="מיקום חניה נכון אוטנומי" index="8">
+                <h2>חנייה</h2>
+                <input data-tag="parking-autonomous" data-input-index="9" type="text" class="info" id="name"
+                    list="parking_pos" placeholder="חנייה אוטנומי" required="" json="חנייה אוטנומי" index="9">
+                <datalist id="parking_pos">
+                    <option>חנייה לפי האוטונומי</option>
+                    <option>חנייה בתוך החצי ריבוע בקצה</option>
+                    <option>חנייה בתוך המשולש</option>
+                </datalist>
 
 
-            <h2>TeleOp</h2>
-            <hr>
-            <h2>כמה הם שמו על צומת הכי גבוה</h2>
-            <input data-tag="Cones placed on high junctions-teleop" data-input-index="10" type="number" class="info" placeholder="TeleOp כמה הם שמים על צומת הכי גבוה" min="0"
-                json="TeleOp כמה הם שמים על צומת הכי גבוה" index="10">
-            <h2>כמה הם שמים על הצומת הבינונית</h2>
-            <input data-tag="Cones placed on medium junctions-teleop" data-input-index="11" type="number" class="info" placeholder="TeleOp כמה הם שמים על הצומת הבינונית" min="0"
-                json="TeleOp כמה הם שמים על הצומת הבינונית" index="11">
-            <h2>כמה הם שמים על צומת הנמוכה</h2>
-            <input data-tag="Cones placed on low junctions-teleop" data-input-index="12" type="number" class="info" placeholder="TeleOp כמה הם שמים על צומת הנמוכה" min="0"
-                json="TeleOp כמה הם שמים על צומת הנמוכה" index="12">
-            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
-            <input data-tag="Cones placed on ground junctions-teleop" data-input-index="13" type="number" class="info" placeholder="TeleOp כמה קונוסים מכניסים בעמדות השחורות" min="0"
-                json="TeleOp כמה קונוסים מכניסים בעמדות השחורות" index="13">
-            <h2>הערות</h2>
-            <input data-tag="Comments-teleop" data-input-index="14" type="text" class="info" placeholder="TeleOp הערות" json="TeleOp הערות" index="14">
-            <h2>אנדגיים</h2>
-            <hr>
-            <h2>כמה הם שמו על צומת הכי גבוה</h2>
-            <input data-tag="Cones placed on high junctions-endgame" data-input-index="15" type="number" class="info" placeholder="EndGame כמה הם שמים על צומת הכי גבוה" min="0"
-                json="EndGame כמה הם שמים על צומת הכי גבוה" index="15">
-            <h2>כמה הם שמים על הצומת הבינונית</h2>
-            <input data-tag="Cones placed on medium junctions-endgame" data-input-index="16" type="number" class="info" placeholder="EndGame כמה הם שמים על הצומת הבינונית" min="0"
-                json="EndGame כמה הם שמים על הצומת הבינונית" index="16">
-            <h2>כמה הם שמים על צומת הנמוכה</h2>
-            <input data-tag="Cones placed on low junctions-endgame" data-input-index="17" type="number" class="info" placeholder="EndGame כמה הם שמים על צומת הנמוכה" min="0"
-                json="EndGame כמה הם שמים על צומת הנמוכה" index="17">
-            <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
-            <input data-tag="Cones placed on ground junctions-endgame" data-input-index="18" type="number" class="info" placeholder="EndGame כמה קונוסים מכניסים בעמדות השחורות" min="0"
-                json="EndGame כמה קונוסים מכניסים בעמדות השחורות" index="18">
-            <h2>האם שמו את האלמנט המיוחד שלהם</h2>
-            <input data-tag="Is element placed-endgame" data-input-index="19" class="info" type="checkbox" title="EndGame האם שמו את האלמנט המיוחד שלהם"
-                placeholder="EndGame האם שמו את האלמנט המיוחד שלהם" json="EndGame האם שמו את האלמנט המיוחד שלהם"
-                index="19">
-            <h2>האם הרובוט חנה</h2>
-            <input data-tag="Is parked-endgame" data-input-index="20" class="info" type="checkbox" title="האם הרובוט חנה" placeholder="EndGame האם הרובוט חנה"
-                json="EndGame האם הרובוט חנה" index="20">
-            <h2>האם יש להם סדר מקצה לקצה של הקונוסים</h2>
-            <input data-tag="Is circuit complete-endgame" data-input-index="21" class="info" type="text" title="האם יש להם סדר מקצה לקצה של הקונוסים"
-                placeholder="האם יש להם סדר מקצה לקצה של הקונוסים" index="21">
-            <h2>הערות</h2>
-            <input data-tag="Comments-endgame" data-input-index="22" class="info" type="text" placeholder="היערות אנדגיים" index="22">
-            <h2>עבירות</h2>
-            <hr>
-            <h2>האם הרובוט עשה עבירה</h2>
-            <input data-tag="Did the robot cause a penalty" data-input-index="23" class="info" type="checkbox" placeholder="האם הרובוט עשה עבירה" index="23">
-            <h2>האם השחקן האנושי עשה עברה</h2>
-            <input data-tag="Did the human player cause a penalty" data-input-index="24" class="info" type="checkbox" placeholder="האם השחקן האנושי עשה עברה" index="24">
-            <h2>האם האוטונומי אמין</h2>
-            <input data-tag="Is the autonomous reliable" data-input-index="25" class="info" type="checkbox" placeholder="האם האוטונומי אמין" index="25">
-            <h2>האם הם הפריעו לרובוט שאיתם</h2>
-            <input data-tag="Did they interupt the other team/team's robot" data-input-index="26" class="info" type="checkbox" placeholder="האם הם הפריעו לרובוט שאיתם" index="26">
-            <h2>דרג את הקבוצה מ1 עד 10</h2>
-            <input data-tag="Rate the team 1-10" data-input-index="27" type="number" min="1" max="10" class="info" placeholder="דירוג" json="דירוג" index="27">
-            <h2>הערות</h2>
-            <input data-tag="Comments" data-input-index="28" type="text" placeholder="הערות" index="28">
+                <h2>TeleOp</h2>
+                <hr>
+                <h2>כמה הם שמו על צומת הכי גבוה</h2>
+                <input data-tag="Cones placed on high junctions-teleop" data-input-index="10" type="number" class="info"
+                    placeholder="TeleOp כמה הם שמים על צומת הכי גבוה" min="0" json="TeleOp כמה הם שמים על צומת הכי גבוה"
+                    index="10">
+                <h2>כמה הם שמים על הצומת הבינונית</h2>
+                <input data-tag="Cones placed on medium junctions-teleop" data-input-index="11" type="number"
+                    class="info" placeholder="TeleOp כמה הם שמים על הצומת הבינונית" min="0"
+                    json="TeleOp כמה הם שמים על הצומת הבינונית" index="11">
+                <h2>כמה הם שמים על צומת הנמוכה</h2>
+                <input data-tag="Cones placed on low junctions-teleop" data-input-index="12" type="number" class="info"
+                    placeholder="TeleOp כמה הם שמים על צומת הנמוכה" min="0" json="TeleOp כמה הם שמים על צומת הנמוכה"
+                    index="12">
+                <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+                <input data-tag="Cones placed on ground junctions-teleop" data-input-index="13" type="number"
+                    class="info" placeholder="TeleOp כמה קונוסים מכניסים בעמדות השחורות" min="0"
+                    json="TeleOp כמה קונוסים מכניסים בעמדות השחורות" index="13">
+                <h2>הערות</h2>
+                <input data-tag="Comments-teleop" data-input-index="14" type="text" class="info"
+                    placeholder="TeleOp הערות" json="TeleOp הערות" index="14">
+                <h2>אנדגיים</h2>
+                <hr>
+                <h2>כמה הם שמו על צומת הכי גבוה</h2>
+                <input data-tag="Cones placed on high junctions-endgame" data-input-index="15" type="number"
+                    class="info" placeholder="EndGame כמה הם שמים על צומת הכי גבוה" min="0"
+                    json="EndGame כמה הם שמים על צומת הכי גבוה" index="15">
+                <h2>כמה הם שמים על הצומת הבינונית</h2>
+                <input data-tag="Cones placed on medium junctions-endgame" data-input-index="16" type="number"
+                    class="info" placeholder="EndGame כמה הם שמים על הצומת הבינונית" min="0"
+                    json="EndGame כמה הם שמים על הצומת הבינונית" index="16">
+                <h2>כמה הם שמים על צומת הנמוכה</h2>
+                <input data-tag="Cones placed on low junctions-endgame" data-input-index="17" type="number" class="info"
+                    placeholder="EndGame כמה הם שמים על צומת הנמוכה" min="0" json="EndGame כמה הם שמים על צומת הנמוכה"
+                    index="17">
+                <h2>כמה קונוסים מכניסים בעמדות השחורות</h2>
+                <input data-tag="Cones placed on ground junctions-endgame" data-input-index="18" type="number"
+                    class="info" placeholder="EndGame כמה קונוסים מכניסים בעמדות השחורות" min="0"
+                    json="EndGame כמה קונוסים מכניסים בעמדות השחורות" index="18">
+                <h2>האם שמו את האלמנט המיוחד שלהם</h2>
+                <input data-tag="Is element placed-endgame" data-input-index="19" class="info" type="checkbox"
+                    title="EndGame האם שמו את האלמנט המיוחד שלהם" placeholder="EndGame האם שמו את האלמנט המיוחד שלהם"
+                    json="EndGame האם שמו את האלמנט המיוחד שלהם" index="19">
+                <h2>האם הרובוט חנה</h2>
+                <input data-tag="Is parked-endgame" data-input-index="20" class="info" type="checkbox"
+                    title="האם הרובוט חנה" placeholder="EndGame האם הרובוט חנה" json="EndGame האם הרובוט חנה"
+                    index="20">
+                <h2>האם יש להם סדר מקצה לקצה של הקונוסים</h2>
+                <input data-tag="Is circuit complete-endgame" data-input-index="21" class="info" type="text"
+                    title="האם יש להם סדר מקצה לקצה של הקונוסים" placeholder="האם יש להם סדר מקצה לקצה של הקונוסים"
+                    index="21">
+                <h2>הערות</h2>
+                <input data-tag="Comments-endgame" data-input-index="22" class="info" type="text"
+                    placeholder="היערות אנדגיים" index="22">
+                <h2>עבירות</h2>
+                <hr>
+                <h2>האם הרובוט עשה עבירה</h2>
+                <input data-tag="Did the robot cause a penalty" data-input-index="23" class="info" type="checkbox"
+                    placeholder="האם הרובוט עשה עבירה" index="23">
+                <h2>האם השחקן האנושי עשה עברה</h2>
+                <input data-tag="Did the human player cause a penalty" data-input-index="24" class="info"
+                    type="checkbox" placeholder="האם השחקן האנושי עשה עברה" index="24">
+                <h2>האם האוטונומי אמין</h2>
+                <input data-tag="Is the autonomous reliable" data-input-index="25" class="info" type="checkbox"
+                    placeholder="האם האוטונומי אמין" index="25">
+                <h2>האם הם הפריעו לרובוט שאיתם</h2>
+                <input data-tag="Did they interupt the other team/team's robot" data-input-index="26" class="info"
+                    type="checkbox" placeholder="האם הם הפריעו לרובוט שאיתם" index="26">
+                <h2>דרג את הקבוצה מ1 עד 10</h2>
+                <input data-tag="Rate the team 1-10" data-input-index="27" type="number" min="1" max="10" class="info"
+                    placeholder="דירוג" json="דירוג" index="27">
+                <h2>הערות</h2>
+                <input data-tag="Comments" data-input-index="28" type="text" placeholder="הערות" index="28">
         </form>
         <div class="buttons-wrapper">
             <button class="button SubButton" id="sub">Submit</button>
