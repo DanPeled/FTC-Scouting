@@ -36,7 +36,7 @@ async function updateViewer(collectionPathArray = defaultDir, changeMode = "form
         }
         nameIndexes.forEach((indexBounds) => {
             resultViewer.innerHTML += `<div class="result_encapsulator">`;
-            resultViewer.innerHTML += `${objs[indexBounds.startIndex].properties[0].hebrewLabel}: ${objs[indexBounds.startIndex].properties[0].value} <br>`;
+            resultViewer.innerHTML += `<h3 style="font-size: 1.3em;">${objs[indexBounds.startIndex].properties[0].hebrewLabel}: </h3><p style="font-size: 1.3em;">${objs[indexBounds.startIndex].properties[0].value}</p><br>`;
             for(let i = 1; i < objs[0].properties.length; i++) {
                 resultViewer.innerHTML += `<h3>${objs[indexBounds.startIndex].properties[i].hebrewLabel}: </h3>`;
                 let currentProperty = 0;
