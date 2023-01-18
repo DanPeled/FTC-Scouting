@@ -18,7 +18,6 @@ export const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
-console.log(app);
 
 
 // works, tested
@@ -37,7 +36,7 @@ export async function writeDocPath__(collectionNames = [], o_ = {}) {
     docPath += collectionNames[i] + "/";
   }
   docPath = docPath.substring(0, docPath.length - 1);
-  console.log(docPath);
+  // console.log(docPath);
   const docRef = await setDoc(doc(db, docPath), o_)
     .then(() => {
       console.log("Data set successfully");
@@ -112,7 +111,7 @@ export async function getDocsData__(collectionPathArray = []) {
     dataArr_.push(doc.data());
   });
   console.log("collected data successfully");
-  console.log(dataArr_);
+  // console.log(dataArr_);
   return dataArr_;
 }
 
@@ -134,18 +133,11 @@ const inputsToValues = (lst) => {
       value: lst[i].value, 
       index: parseInt(lst[i].getAttribute("data-input-index")), 
       label: lst[i].getAttribute("data-tag"),
-      hebrewLabel: lst[i].getAttribute("placeholder")
+      hebrewLabel: lst[i].getAttribute("placeholder"),
+      type: lst[i].getAttribute("type")
     });
   });
   return {properties: values};
-}
-
-function alphabeticValue(str__ = "") {
-  let sum = 0;
-  for(let i = 0; i < str__.length; i++) {
-      sum += str__.charCodeAt(i);
-  }
-  return sum;
 }
 
 const submitValues = () => {

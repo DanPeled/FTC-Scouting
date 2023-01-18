@@ -9,6 +9,7 @@
     <title>Scouting 2023</title>
     <link rel="stylesheet" href="./Assets/Styling/style.css">
     <script src="./Assets/Scripts/firebase_script.js" type="module"></script>
+    <script src="./Assets/Scripts/formManualCheck.js"></script>
     <!-- <script src="./Assets/Scripts/firebase_script.js" type="module" defer></script> -->
     <script type="text/javascript"
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
@@ -55,7 +56,7 @@
                 <hr>
                 <h2>שמו את הקונוס הראשון</h2>
                 <input data-tag="Placed first cone" data-input-index="2" type="checkbox" title="שמו את הקונוס הראשון"
-                    placeholder="שמו את הקונוס הראשון אוטנומי" json="שמו את הקונוס הראשון אוטנומי" index="2">
+                    placeholder="שמו את הקונוס הראשון אוטנומי" json="שמו את הקונוס הראשון אוטנומי" index="2" value="off">
                 <h2>כמות של קונוסים ששמו במשולש בקצה</h2>
                 <input data-tag="Cones placed in terminals-autonomous" data-input-index="3" type="number" class="info"
                     placeholder="כמות של קונוסים ששמו במשולש בקצה אוטנומי" min="0"
@@ -78,7 +79,7 @@
                     json="כמה קונוסים מכניסים בעמדות השחורות אוטנומי" index="7">
                 <h2>מיקום חניה נכון</h2>
                 <input data-tag="Correct parking-autonomous" data-input-index="8" type="checkbox" class="info" id="name"
-                    placeholder="מיקום חניה נכון אוטנומי" json="מיקום חניה נכון אוטנומי" index="8">
+                    placeholder="מיקום חניה נכון אוטנומי" json="מיקום חניה נכון אוטנומי" index="8" value="off">
                 <h2>חנייה</h2>
                 <input data-tag="parking-autonomous" data-input-index="9" type="text" class="info" id="name"
                     list="parking_pos" placeholder="חנייה אוטנומי" required="" json="חנייה אוטנומי" index="9">
@@ -131,32 +132,32 @@
                 <h2>האם שמו את האלמנט המיוחד שלהם</h2>
                 <input data-tag="Is element placed-endgame" data-input-index="19" class="info" type="checkbox"
                     title="EndGame האם שמו את האלמנט המיוחד שלהם" placeholder="EndGame האם שמו את האלמנט המיוחד שלהם"
-                    json="EndGame האם שמו את האלמנט המיוחד שלהם" index="19">
+                    json="EndGame האם שמו את האלמנט המיוחד שלהם" index="19" value="off">
                 <h2>האם הרובוט חנה</h2>
                 <input data-tag="Is parked-endgame" data-input-index="20" class="info" type="checkbox"
                     title="האם הרובוט חנה" placeholder="EndGame האם הרובוט חנה" json="EndGame האם הרובוט חנה"
-                    index="20">
+                    index="20" value="off">
                 <h2>האם יש להם סדר מקצה לקצה של הקונוסים</h2>
-                <input data-tag="Is circuit complete-endgame" data-input-index="21" class="info" type="text"
+                <input data-tag="Is circuit complete-endgame" data-input-index="21" class="info" type="checkbox"
                     title="האם יש להם סדר מקצה לקצה של הקונוסים" placeholder="האם יש להם סדר מקצה לקצה של הקונוסים"
-                    index="21">
+                    index="21" value="off">
                 <h2>הערות</h2>
                 <input data-tag="Comments-endgame" data-input-index="22" class="info" type="text"
-                    placeholder="היערות אנדגיים" index="22">
+                    placeholder="הערות אנדגיים" index="22">
                 <h2>עבירות</h2>
                 <hr>
                 <h2>האם הרובוט עשה עבירה</h2>
                 <input data-tag="Did the robot cause a penalty" data-input-index="23" class="info" type="checkbox"
-                    placeholder="האם הרובוט עשה עבירה" index="23">
+                    placeholder="האם הרובוט עשה עבירה" index="23" value="off">
                 <h2>האם השחקן האנושי עשה עברה</h2>
                 <input data-tag="Did the human player cause a penalty" data-input-index="24" class="info"
-                    type="checkbox" placeholder="האם השחקן האנושי עשה עברה" index="24">
+                    type="checkbox" placeholder="האם השחקן האנושי עשה עברה" index="24" value="off">
                 <h2>האם האוטונומי אמין</h2>
                 <input data-tag="Is the autonomous reliable" data-input-index="25" class="info" type="checkbox"
-                    placeholder="האם האוטונומי אמין" index="25">
+                    placeholder="האם האוטונומי אמין" index="25" value="off">
                 <h2>האם הם הפריעו לרובוט שאיתם</h2>
                 <input data-tag="Did they interupt the other team/team's robot" data-input-index="26" class="info"
-                    type="checkbox" placeholder="האם הם הפריעו לרובוט שאיתם" index="26">
+                    type="checkbox" placeholder="האם הם הפריעו לרובוט שאיתם" index="26" value="off">
                 <h2>דרג את הקבוצה מ1 עד 10</h2>
                 <input data-tag="Rate the team 1-10" data-input-index="27" type="number" min="1" max="10" class="info"
                     placeholder="דירוג" json="דירוג" index="27">

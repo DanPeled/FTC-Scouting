@@ -120,6 +120,8 @@ div.buttons-wrapper button:hover, button.link:hover {
   font-size: 1.1rem;
   word-break: keep-all;
   color: #b3e6ff;
+  display: inline;
+  font-family: "Varela Round";
 }
 #result_viewer h3 {
   color: #cfe9fc;

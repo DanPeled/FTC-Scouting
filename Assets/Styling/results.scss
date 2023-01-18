@@ -75,6 +75,8 @@ div.buttons-wrapper button, button.link {
         font-size: 1.1rem;
         word-break: keep-all;
         color: color.adjust($foreground, $lightness: -5%, $hue: -5deg);
+        display: inline;
+        font-family: "Varela Round";
     }
 
     h3 {
