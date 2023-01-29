@@ -1,0 +1,8 @@
+button {
+    background-color: hsl(200deg, 80%, 40%);
+    width: 5vh;
+}
+
+button.active {
+    background-color: cornflowerblue;
+}

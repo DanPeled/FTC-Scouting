@@ -113,3 +113,32 @@ div.center {
   height: -moz-fit-content;
   height: fit-content;
 }
+
+yn-select {
+  background-color: hsl(205deg, 50%, 30%);
+  width: 10vh;
+  aspect-ratio: 1/1;
+  transition: all 300ms ease-in-out;
+  border-radius: 3vh;
+  color: hsl(205deg, 100%, 90%);
+  border: 2em;
+  position: relative;
+  align-self: center;
+}
+
+yn-select[value=on] {
+  background-color: hsl(205deg, 80%, 60%);
+  color: hsl(205deg, 100%, 20%);
+}
+
+yn-select {
+  box-shadow: 0em 0em 0.3em 0em hsl(205deg, 100%, 10%) inset, 0em 0em 0.6em 0em hsl(205deg, 100%, 20%) inset;
+}
+
+yn-select:hover {
+  box-shadow: 0em 0em 0.4em 0em hsl(185deg, 100%, 80%) inset;
+}
+
+.info.input {
+  text-align: center;
+}

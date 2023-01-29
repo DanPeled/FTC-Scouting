@@ -26,7 +26,7 @@ async function updateViewer(collectionPathArray = defaultDir, changeMode = "form
         }    
     } 
     if(mode == "averages" && objs.length > 0) { // Averages mode - to view a summary of all forms filled (averages of every team)
-        let nameIndexes = [], currentName = "";
+        let nameIndexes = [], currentName = "NOTHING";
         for(let i = 0; i < objs.length; i++) { // Getting all forms index bounds
             if(objs[i].properties[0].value != currentName) {
                 currentName = objs[i].properties[0].value;

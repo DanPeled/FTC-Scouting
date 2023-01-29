@@ -70,3 +70,31 @@ div.center {
     min-height: 100vh;
     height: fit-content;
 }
+
+yn-select {
+    background-color: getCC(5, 3);
+    width: 10vh;
+    aspect-ratio: 1/1;
+    transition: all 300ms ease-in-out;
+    border-radius: 3vh;
+    color: getCC(10,9);
+    border: 2em;
+    position: relative;
+    align-self: center;
+}
+
+yn-select[value="on"] {
+    background-color: getCC(8,6);
+    color: getCC(10,2);
+}
+yn-select {
+    box-shadow: 0em 0em 0.3em 0em getCC(10,1) inset, 0em 0em 0.6em 0em getCC(10,2) inset;
+}
+
+yn-select:hover {
+    box-shadow: 0em 0em 0.4em 0em getCC(10,8,1,-20deg) inset;
+}
+
+.info.input {
+    text-align: center;
+}

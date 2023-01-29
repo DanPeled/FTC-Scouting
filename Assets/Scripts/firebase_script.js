@@ -129,20 +129,35 @@ export async function deleteDocs__(collectionName, id_) {
 const inputsToValues = (lst) => {
   let values = [];
   lst.forEach((e, i) => {
+    let currentValue = lst[i].value;
+    let currentType = lst[i].getAttribute("type");
+    if(currentValue == null || currentValue == undefined) {
+      switch(currentType) {
+        case "number":
+          currentValue = "0";
+          break;
+        case "checkbox":
+          currentValue = "off";
+          break;
+        default:
+          currentValue = "";
+          break;
+      }}
     values.push({ 
-      value: lst[i].value, 
+      value: currentValue, 
       index: parseInt(lst[i].getAttribute("data-input-index")), 
       label: lst[i].getAttribute("data-tag"),
       hebrewLabel: lst[i].getAttribute("placeholder"),
-      type: lst[i].getAttribute("type")
+      type: currentType
     });
   });
+  console.log(values);
   return {properties: values};
 }
 
 const submitValues = () => {
   let inputs = [];
-  inputs = inputsToValues(document.querySelectorAll("input"));
+  inputs = inputsToValues(document.querySelectorAll(".info.input"));
   // inputs.sort((a,b) => a.index - b.index);
   addListOfData(inputs);
   alert("Form Submitted!");
