@@ -115,6 +115,7 @@ div.buttons-wrapper button:hover, button.link:hover {
   padding-bottom: 3vh;
   text-align: left;
   margin: 0em 1.2vw;
+  overflow-x: scroll;
 }
 #result_viewer p, #result_viewer h3 {
   font-size: 1.1rem;
@@ -130,4 +131,28 @@ div.buttons-wrapper button:hover, button.link:hover {
   border-bottom: 1em hsl(205deg, 60%, 50%) solid;
   border-radius: 2em;
   margin: 1em 0em 2em;
+}
+
+td {
+  margin: 0em 3em;
+  color: hsl(205deg, 100%, 90%);
+  word-break: keep-all;
+  line-break: strict;
+}
+
+table {
+  border-spacing: 1em;
+  overflow-x: scroll;
+  display: block;
+  width: 95vw;
+  border-collapse: collapse;
+}
+table td {
+  border-left: 0.5vh solid hsl(205deg, 100%, 80%);
+  border-right: 0.5vh solid hsl(205deg, 100%, 80%);
+  text-align: center;
+}
+
+tr {
+  border: 0.5vh solid hsl(205deg, 100%, 80%);
 }

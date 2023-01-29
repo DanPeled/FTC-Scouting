@@ -16,14 +16,23 @@ async function updateViewer(collectionPathArray = defaultDir, changeMode = "form
     });
     
     if(mode == "forms") { // Forms mode - to view all forms filled regardless of any criteria
-        
-        for (let i = 0; i < objs.length; i++) {
-            resultViewer.innerHTML += `<div class="result_encapsulator">`;
-            for(let j = 0; j < objs[i].properties.length; j++) {
-                resultViewer.innerHTML += `<h3>${objs[i].properties[j].hebrewLabel}: </h3><p>${objs[i].properties[j].value}</p> <br>`;
+        // resultViewer.style = `display: flex; flex-direction: row;`;
+        // for (let i = 0; i < objs.length; i++) {
+        //     resultViewer.innerHTML += `<div class="result_encapsulator">`;
+        //     for(let j = 0; j < objs[i].properties.length; j++) {
+        //         resultViewer.innerHTML += `<h3>${objs[i].properties[j].hebrewLabel}: </h3><p>${objs[i].properties[j].value}</p> <br>`;
+        //     }
+        //     resultViewer.innerHTML += `</div>`;
+        // }   
+        let resultViewer_HTML_STR = "";
+        for(let i = 0; i < objs[0].properties.length; i++) {
+            resultViewer_HTML_STR += `<tbody><tr><td> ${objs[0].properties[i].hebrewLabel}</td>`;
+            for(let j = 0; j < objs.length; j++) {
+                resultViewer_HTML_STR += `<td>${objs[j].properties[i].value}</td>`;
             }
-            resultViewer.innerHTML += `</div>`;
-        }    
+            resultViewer_HTML_STR += `</tr></tbody>`;
+        }
+        resultViewer.innerHTML = resultViewer_HTML_STR;  
     } 
     if(mode == "averages" && objs.length > 0) { // Averages mode - to view a summary of all forms filled (averages of every team)
         let nameIndexes = [], currentName = "NOTHING";

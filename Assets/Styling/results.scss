@@ -71,6 +71,7 @@ div.buttons-wrapper button, button.link {
     padding-bottom: 3vh;
     text-align: left;
     margin: 0em 1.2vw;
+    overflow-x: scroll;
     p, h3 {
         font-size: 1.1rem;
         word-break: keep-all;
@@ -88,4 +89,30 @@ div.buttons-wrapper button, button.link {
         border-radius: 2em;
         margin: 1em 0em 2em;
     }
+    
+}
+
+td {
+    margin: 0em 3em;
+    $foreground: getCC(10,9);
+    color: $foreground;
+    word-break: keep-all;
+    line-break: strict;
+}
+
+
+table {
+    border-spacing: 1em;
+    overflow-x: scroll;
+    display:block;
+    width: 95vw;
+    border-collapse: collapse;
+    td {
+        border-left: 0.5vh solid getCC(10,8);
+        border-right: 0.5vh solid getCC(10,8);
+        text-align: center;
+    }
+}
+tr {
+    border: 0.5vh solid getCC(10,8);
 }
