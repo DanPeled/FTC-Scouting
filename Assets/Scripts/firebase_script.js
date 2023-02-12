@@ -1,6 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, collection, updateDoc, deleteDoc, deleteField, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  updateDoc,
+  deleteDoc,
+  deleteField,
+  getDocs,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -18,14 +29,15 @@ export const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
-
+export const dataCollectionPath = ["formData"];
 
 // works, tested
 export async function writeDoc__(collectionName, o_ = {}, id_ = "NONE") {
   const docRef = await setDoc(doc(db, `${collectionName}/${id}`), o_)
     .then(() => {
       console.log("Data set successfully");
-    }).catch((error) => {
+    })
+    .catch((error) => {
       console.log("Operation failed; error: " + error);
     });
 }
@@ -40,16 +52,19 @@ export async function writeDocPath__(collectionNames = [], o_ = {}) {
   const docRef = await setDoc(doc(db, docPath), o_)
     .then(() => {
       console.log("Data set successfully");
-    }).catch((error) => {
+    })
+    .catch((error) => {
       console.log("Operation failed; error: " + error);
     });
 }
 
 export async function addDoc__(collectionPathArray = [], o_ = {}) {
-  const docRef = await addDoc(collection(db, arrayToPath(collectionPathArray)), o_);
+  const docRef = await addDoc(
+    collection(db, arrayToPath(collectionPathArray)),
+    o_
+  );
   return docRef;
 }
-
 
 // works, tested
 // async function getDocRef__(collectionName) {
@@ -95,7 +110,9 @@ export async function getDocs__(collectionPathArray = []) {
     console.error("There must be an odd number of path directories (getDocs).");
     return null;
   }
-  const docsSnap = await getDocs(collection(db, arrayToPath(collectionPathArray)));
+  const docsSnap = await getDocs(
+    collection(db, arrayToPath(collectionPathArray))
+  );
   console.log("collected data successfully");
   return docsSnap;
 }
@@ -106,8 +123,10 @@ export async function getDocsData__(collectionPathArray = []) {
     console.error("There must be an odd number of path directories (getDocs).");
     return null;
   }
-  const docsSnap = await getDocs(collection(db, arrayToPath(collectionPathArray)));
-  docsSnap.forEach(doc => {
+  const docsSnap = await getDocs(
+    collection(db, arrayToPath(collectionPathArray))
+  );
+  docsSnap.forEach((doc) => {
     dataArr_.push(doc.data());
   });
   console.log("collected data successfully");
@@ -131,8 +150,8 @@ const inputsToValues = (lst) => {
   lst.forEach((e, i) => {
     let currentValue = lst[i].value;
     let currentType = lst[i].getAttribute("type");
-    if(currentValue == null || currentValue == undefined) {
-      switch(currentType) {
+    if (currentValue == null || currentValue == undefined) {
+      switch (currentType) {
         case "number":
           currentValue = "0";
           break;
@@ -142,33 +161,59 @@ const inputsToValues = (lst) => {
         default:
           currentValue = "";
           break;
-      }}
-    values.push({ 
-      value: currentValue, 
-      index: parseInt(lst[i].getAttribute("data-input-index")), 
+      }
+    }
+    values.push({
+      value: currentValue,
+      index: parseInt(lst[i].getAttribute("data-input-index")),
       label: lst[i].getAttribute("data-tag"),
       hebrewLabel: lst[i].getAttribute("placeholder"),
-      type: currentType
+      type: currentType,
     });
   });
   console.log(values);
-  return {properties: values};
-}
+  return { properties: values };
+};
+const gatherInfo = (isManual = true, lst = []) => {
+  let infoObj = {};
+  if (isManual) {
+    const conesPoles = document.querySelectorAll("form .pole-display-wrapper");
+    conesPoles.forEach((cp, i) => {
+      const gameState = i == 0 ? "autonomous" : "teleop_endgame";
+      infoObj[gameState] = [];
+      cp.querySelectorAll("poles-display").forEach((pole, i) => {
+        infoObj[gameState][i] = {
+          label: pole.getTitle(),
+          value: pole.getValue(),
+          image: pole.getAttribute("image"),
+        };
+      });
+    });
+    const dataElements = document.querySelectorAll("form > .info.input");
+    const dataLoc = "generalData";
+    infoObj[dataLoc] = [];
+    dataElements.forEach((e, i) => {
+      infoObj[dataLoc][i] = {
+        label: e.getAttribute("data-tag"),
+        value: e.value,
+      };
+    });
+  } else infoObj = inputsToValues(lst);
+  console.log(infoObj);
+  return infoObj;
+};
 
-const submitValues = () => {
-  let inputs = [];
-  inputs = inputsToValues(document.querySelectorAll(".info.input"));
+const submitValues = (eve) => {
+  const inputs = gatherInfo();
   // inputs.sort((a,b) => a.index - b.index);
   addListOfData(inputs);
   alert("Form Submitted!");
+  // location.reload();
 };
 
 const submitButton = document.querySelector("button#sub");
-submitButton.addEventListener("click", () => {
-  submitValues();
-});
+submitButton.addEventListener("click", submitValues);
 
-const addListOfData = lst => {
+const addListOfData = (lst) => {
   addDoc__(["formData"], lst);
-}
-
+};

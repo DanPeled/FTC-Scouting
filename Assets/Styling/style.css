@@ -52,19 +52,19 @@ h3 {
 }
 
 form {
-  background-color: hsl(205deg, 80%, 80%);
+  background-color: hsl(200deg, 85%, 57%);
   padding: 2vh;
   border-radius: 3vh;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: 3vh, 1vw;
   padding: 3vh;
+  min-width: 40vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  align-items: right;
+  align-items: center;
   row-gap: 1em;
 }
 form * {
@@ -76,7 +76,8 @@ datalist option {
   color: black;
 }
 
-div.buttons-wrapper button, button.link {
+div.buttons-wrapper button,
+button.link {
   font-size: 1.4rem;
   background-color: hsla(205deg, 100%, 30%, 0.5);
   color: hsl(205deg, 90%, 70%);
@@ -87,7 +88,8 @@ div.buttons-wrapper button, button.link {
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
-div.buttons-wrapper button:hover, button.link:hover {
+div.buttons-wrapper button:hover,
+button.link:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
 
@@ -105,34 +107,35 @@ option {
 }
 
 div.center {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   min-height: 100vh;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
 yn-select {
-  background-color: hsl(205deg, 50%, 30%);
-  width: 10vh;
-  aspect-ratio: 1/1;
+  border-radius: 0.4em;
+  background-color: hsl(335deg, 70%, 30%);
   transition: all 300ms ease-in-out;
-  border-radius: 3vh;
-  color: hsl(205deg, 100%, 90%);
-  border: 2em;
+  color: hsl(275deg, 100%, 90%);
   position: relative;
   align-self: center;
-}
-
-yn-select[value=on] {
-  background-color: hsl(205deg, 80%, 60%);
-  color: hsl(205deg, 100%, 20%);
-}
-
-yn-select {
   box-shadow: 0em 0em 0.3em 0em hsl(205deg, 100%, 10%) inset, 0em 0em 0.6em 0em hsl(205deg, 100%, 20%) inset;
+  display: inline;
+}
+
+h2,
+h3 {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 110%;
+  display: inline;
+}
+
+yn-select[value=true] {
+  background-color: hsl(135deg, 70%, 60%);
+  color: hsl(145deg, 100%, 20%);
 }
 
 yn-select:hover {
@@ -141,4 +144,37 @@ yn-select:hover {
 
 .info.input {
   text-align: center;
+}
+
+div.pole-display-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  background-color: hsl(205deg, 70%, 26%);
+  padding: 0.3vh 2vh;
+  border-radius: 3vh;
+  gap: 1vh;
+  box-shadow: 0 0 2vh 0 hsl(205deg, 70%, 26%), 0 0 3vh 0 rgba(0, 0, 0, 0.9) inset;
+}
+div.pole-display-wrapper * {
+  color: white;
+}
+
+poles-display.back {
+  background-color: hsl(205deg, 70%, 26%);
+  padding: 2vh 2vh;
+  border-radius: 3vh;
+  box-shadow: 0 0 2vh 0 hsl(205deg, 70%, 26%), 0 0 3vh 0 rgba(0, 0, 0, 0.9) inset;
+  color: white;
+}
+
+switch-display {
+  color: #000000;
+}
+
+h1.title,
+h2.title {
+  text-decoration: underline;
+  font-size: 160%;
+  margin: 0.7em 0.1em;
 }
