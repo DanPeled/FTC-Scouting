@@ -139,6 +139,7 @@ class polesDisplay extends HTMLElement {
   constructor() {
     super();
     this.localShadow = this.attachShadow({ mode: "open" });
+    this.manualDisplay = false;
     this.shadowRoot.innerHTML = `
         <div class="all-wrapper">
             <img id="image-display" src="" />
@@ -195,7 +196,7 @@ class polesDisplay extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
       case "displays":
-        this.refreshDisplays(oldValue, newValue);
+        if (!this.manualDisplay) this.refreshDisplays(oldValue, newValue);
         break;
       case "image":
         if (typeof newValue === "string" || newValue instanceof String)
@@ -219,7 +220,7 @@ class polesDisplay extends HTMLElement {
     const displayWrapper = this.localShadow.getElementById(
       "number-display-wrapper"
     );
-    console.log(displayWrapper);
+    // console.log(displayWrapper);
     if (displayWrapper != null) {
       displayWrapper.innerHTML = "";
       for (let c = 0; c < parseInt(newValue); c++) {
@@ -245,6 +246,11 @@ class polesDisplay extends HTMLElement {
   }
   getDisplays() {
     return this.localShadow.querySelectorAll("number-display");
+  }
+
+  setManualDisplays(amount) {
+    this.refreshDisplays(0, amount);
+    this.manualDisplay = true;
   }
 
   setChangable(b = false) {

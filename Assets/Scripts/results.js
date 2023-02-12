@@ -174,29 +174,30 @@ async function updateViewer(
     });
     resultViewerHTML += `</tr>`;
   });
-  resultViewerHTML += `<tr><td>cones</td>`;
+  resultViewerHTML += `<tr><td>autonomous | cones | teleop</td>`;
   objs.forEach((obj_) => {
     resultViewerHTML += `<td>`;
     const { autonomous: auto, teleop_endgame: drive } = obj_;
     [auto, drive].forEach((gameState) => {
-      resultViewerHTML += `<div style="display: grid; grid-template-columns: repeat(3, 1fr); place-items: center;">`;
+      resultViewerHTML += `<div style="display: grid; grid-template-columns: repeat(5, 1fr); place-items: center;">`; //TODO: use div and custom component poles-display
       gameState.forEach((pole, i) => {
-        let poleDisplay = document.createElement("poles-display");
-        poleDisplay.setAttribute("displays", 1);
-        poleDisplay.setAttribute("title", pole.label);
-        poleDisplay.setAttribute("image", pole.image);
+        // let poleDisplay = document.createElement("poles-display");
+        // poleDisplay.setManualDisplays(1);
+        // // poleDisplay.setAttribute("displays", 1);
+        // poleDisplay.setAttribute("title", pole.label);
+        // poleDisplay.setAttribute("image", pole.image);
+        // poleDisplay.setDisplay(0, pole.value);
+        // poleDisplay.setChangable(true);
+        // let tempWrapper = document.createElement("span");
+        // tempWrapper.appendChild(poleDisplay);
+        // console.log(tempWrapper.firstChild);
 
-        console.log(poleDisplay.shadowRoot);
-        window.setTimeout(() => {
-          poleDisplay.getDisplays().item(0).setValue(pole.value);
-          poleDisplay.setChangable(false);
-          poleDisplay.setDisplay(0, pole.value);
-        }, 50);
-        if (i == gameState.length - 1)
-          poleDisplay.setAttribute("style", "grid-column: span 2;");
-        resultViewerHTML += poleDisplay.outerHTML;
+        if (i == gameState.length - 1) {
+          // poleDisplay.setAttribute("style", "grid-column: span 2;");
+        }
+        resultViewerHTML += `<div>${pole.label}: ${pole.value}</div> `;
       });
-      resultViewerHTML += `</div>`;
+      resultViewerHTML += `</div>`; //TODO: remove and use custom component
     });
     resultViewerHTML += `</td>`;
   });
