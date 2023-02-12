@@ -208,7 +208,9 @@ const submitValues = (eve) => {
   // inputs.sort((a,b) => a.index - b.index);
   addListOfData(inputs);
   alert("Form Submitted! טופס הוגש");
-  location.reload();
+  window.setTimeout((eve) => {
+    location.reload();
+  }, 100 * 12);
 };
 
 const submitButton = document.querySelector("button#sub");

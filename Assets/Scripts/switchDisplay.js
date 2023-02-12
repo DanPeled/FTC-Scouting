@@ -6,7 +6,7 @@ class SwitchDisplay extends HTMLElement {
     this.localShadow = this.attachShadow({ mode: "open" });
     this.defaultSize = 3;
     this.default_style_color = "#102466";
-    this.value = 0;
+    this.value = "No selection";
 
     this.localShadow.innerHTML = `
             <table class="all-wrapper">
