@@ -50,7 +50,9 @@ body {
   height: fit-content;
 }
 
-.top, .middle, .bottom {
+.top,
+.middle,
+.bottom {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -81,7 +83,8 @@ h3 {
   font-weight: 900;
 }
 
-div.buttons-wrapper button, button.link {
+div.buttons-wrapper button,
+button.link {
   font-size: 1.4rem;
   background-color: hsla(205deg, 100%, 30%, 0.5);
   color: hsl(205deg, 90%, 70%);
@@ -92,7 +95,8 @@ div.buttons-wrapper button, button.link {
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
-div.buttons-wrapper button:hover, button.link:hover {
+div.buttons-wrapper button:hover,
+button.link:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
 
@@ -114,7 +118,8 @@ div.buttons-wrapper button:hover, button.link:hover {
   margin: 0em 1.2vw;
   overflow-x: scroll;
 }
-#result_viewer p, #result_viewer h3 {
+#result_viewer p,
+#result_viewer h3 {
   font-size: 1.1rem;
   word-break: keep-all;
   color: #b3e6ff;
@@ -130,13 +135,6 @@ div.buttons-wrapper button:hover, button.link:hover {
   margin: 1em 0em 2em;
 }
 
-td {
-  margin: 0em 3em;
-  color: hsl(205deg, 100%, 90%);
-  word-break: keep-all;
-  line-break: strict;
-}
-
 table {
   border-spacing: 1em;
   overflow-x: scroll;
@@ -148,8 +146,25 @@ table td {
   border-left: 0.5vh solid hsl(205deg, 100%, 80%);
   border-right: 0.5vh solid hsl(205deg, 100%, 80%);
   text-align: center;
+  margin: 0em 3em;
+  color: hsl(205deg, 100%, 90%);
+  word-break: keep-all;
+  line-break: strict;
 }
 
 tr {
   border: 0.5vh solid hsl(205deg, 100%, 80%);
+}
+
+div.menu {
+  width: 0;
+  position: fixed;
+  float: right;
+  display: none;
+}
+
+button.menu-toggle.toggle.active + div.menu {
+  width: 50vw;
+  display: flexbox;
+  background-color: hsl(205deg, 60%, 40%);
 }

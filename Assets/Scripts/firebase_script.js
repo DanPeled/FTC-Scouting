@@ -207,8 +207,8 @@ const submitValues = (eve) => {
   const inputs = gatherInfo();
   // inputs.sort((a,b) => a.index - b.index);
   addListOfData(inputs);
-  alert("Form Submitted!");
-  // location.reload();
+  alert("Form Submitted! טופס הוגש");
+  location.reload();
 };
 
 const submitButton = document.querySelector("button#sub");

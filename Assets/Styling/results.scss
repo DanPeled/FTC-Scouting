@@ -1,118 +1,135 @@
 @use "sass:color";
 @import "./custom_scss";
 
-
 body {
-    justify-content: start;
-    gap: 5vh;
-    height: fit-content;
+  justify-content: start;
+  gap: 5vh;
+  height: fit-content;
 }
 
-.top, .middle, .bottom {
-    width: 100%;
-    @include flexing(column);
-    min-height: 10vh;
-    height: fit-content;
+.top,
+.middle,
+.bottom {
+  width: 100%;
+  @include flexing(column);
+  min-height: 10vh;
+  height: fit-content;
 }
 
 .top {
-    background-color: getCC(5,4);
+  background-color: getCC(5, 4);
 }
 
 div.middle {
+  h1 {
+    text-decoration: underline;
+  }
 
-
-    h1 {
-        text-decoration: underline;
-    }
-    background-color: getCC(6,3);
+  background-color: getCC(6, 3);
 }
 
 p,
 h1,
 h2,
 h3 {
-    color: getCC(9, 8, 1, 5);
-    font-weight: 900;
+  color: getCC(9, 8, 1, 5);
+  font-weight: 900;
 }
 
-div.buttons-wrapper button, button.link {
-    font-size: 1.4rem;
+div.buttons-wrapper button,
+button.link {
+  font-size: 1.4rem;
 
-    background-color: getCC(light, 3, 0.5);
-    $main-color: getCC(9, 7);
-    color: $main-color;
-    border: 0.2em $main-color solid;
-    border-radius: 0.4em;
+  background-color: getCC(light, 3, 0.5);
+  $main-color: getCC(9, 7);
+  color: $main-color;
+  border: 0.2em $main-color solid;
+  border-radius: 0.4em;
 
-    cursor: pointer;
-    margin: 0.5em 0.2em;
-    padding: 0.2em 0.4em;
-    transition: 250ms ease-in-out;
+  cursor: pointer;
+  margin: 0.5em 0.2em;
+  padding: 0.2em 0.4em;
+  transition: 250ms ease-in-out;
 
-    &:hover {
-        box-shadow: 0em 0em 0.2em 0em $main-color inset, 0em 0em 0.35em 0em $main-color inset;
-    }
+  &:hover {
+    box-shadow: 0em 0em 0.2em 0em $main-color inset,
+      0em 0em 0.35em 0em $main-color inset;
+  }
 }
 
 #result_viewer {
-    font-size: 100%;
-    line-height: 1.4em;
-    $foreground: getCC(10,9);
-    color: $foreground;
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 50vh;
-    height: fit-content;
-    text-align: center;
-    text-overflow: ellipsis;
-    word-wrap: normal;
-    white-space: initial;
-    line-break: anywhere;
-    padding-bottom: 3vh;
-    text-align: left;
-    margin: 0em 1.2vw;
-    overflow-x: scroll;
-    p, h3 {
-        font-size: 1.1rem;
-        word-break: keep-all;
-        color: color.adjust($foreground, $lightness: -5%, $hue: -5deg);
-        display: inline;
-        font-family: "Varela Round";
-    }
+  font-size: 100%;
+  line-height: 1.4em;
+  $foreground: getCC(10, 9);
+  color: $foreground;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 50vh;
+  height: fit-content;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  white-space: initial;
+  line-break: anywhere;
+  padding-bottom: 3vh;
+  text-align: left;
+  margin: 0em 1.2vw;
+  overflow-x: scroll;
 
-    h3 {
-        color: color.adjust($foreground, $saturation: -10%);
-    }
+  p,
+  h3 {
+    font-size: 1.1rem;
+    word-break: keep-all;
+    color: color.adjust($foreground, $lightness: -5%, $hue: -5deg);
+    display: inline;
+    font-family: "Varela Round";
+  }
 
-    div.result_encapsulator {
-        border-bottom: 1em getCC(6,5) solid;
-        border-radius: 2em;
-        margin: 1em 0em 2em;
-    }
-    
+  h3 {
+    color: color.adjust($foreground, $saturation: -10%);
+  }
+
+  div.result_encapsulator {
+    border-bottom: 1em getCC(6, 5) solid;
+    border-radius: 2em;
+    margin: 1em 0em 2em;
+  }
 }
 
-td {
+table {
+  border-spacing: 1em;
+  overflow-x: scroll;
+  display: block;
+  width: 95vw;
+  border-collapse: collapse;
+
+  td {
+    border-left: 0.5vh solid getCC(10, 8);
+    border-right: 0.5vh solid getCC(10, 8);
+    text-align: center;
     margin: 0em 3em;
-    $foreground: getCC(10,9);
+
+    $foreground: getCC(10, 9);
     color: $foreground;
     word-break: keep-all;
     line-break: strict;
+  }
 }
 
-
-table {
-    border-spacing: 1em;
-    overflow-x: scroll;
-    display:block;
-    width: 95vw;
-    border-collapse: collapse;
-    td {
-        border-left: 0.5vh solid getCC(10,8);
-        border-right: 0.5vh solid getCC(10,8);
-        text-align: center;
-    }
-}
 tr {
-    border: 0.5vh solid getCC(10,8);
+  border: 0.5vh solid getCC(10, 8);
+}
+
+div.menu {
+  width: 0;
+  position: fixed;
+  float: right;
+  display: none;
+}
+
+button.menu-toggle.toggle.active+div.menu {
+  width: 50vw;
+  display: flexbox;
+  background-color: getCC(6, 4);
+
+
 }
