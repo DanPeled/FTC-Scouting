@@ -28,8 +28,8 @@ async function updateViewer(
   let objs = await getDocsData__(collectionPathArray);
   objs.sort((obj1, obj2) => {
     // Name sorting algorithm
-    let name1 = obj1.generalData[0].value.toLocaleLowerCase(),
-      name2 = obj2.generalData[0].value.toLocaleLowerCase();
+    let name1 = obj1.generalData[1].value.toLocaleLowerCase(),
+      name2 = obj2.generalData[1].value.toLocaleLowerCase();
     if (name1 > name2) return 1;
     if (name1 < name2) return -1;
     return 0;
