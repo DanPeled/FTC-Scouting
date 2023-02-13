@@ -30,7 +30,8 @@ datalist option {
 }
 
 div.buttons-wrapper button,
-button.link {
+button.link,
+form button {
   font-size: 1.4rem;
 
   background-color: getCC(light, 3, 0.5);
@@ -48,6 +49,11 @@ button.link {
     box-shadow: 0em 0em 0.2em 0em $main-color inset,
       0em 0em 0.35em 0em $main-color inset;
   }
+}
+
+form button {
+  font-size: 1.1em;
+  color: getCC(10, 8);
 }
 
 input,
@@ -81,6 +87,7 @@ yn-select {
     0em 0em 0.6em 0em getCC(10, 2) inset;
   display: inline;
 }
+
 h2,
 h3 {
   width: fit-content;
@@ -100,7 +107,9 @@ yn-select:hover {
 .info.input {
   text-align: center;
 }
+
 $back-color: getCC(7, 3, 1, 0deg, 0, -4);
+
 div.pole-display-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -115,6 +124,7 @@ div.pole-display-wrapper {
     color: white;
   }
 }
+
 poles-display.back {
   background-color: $back-color;
   padding: 2vh 2vh;

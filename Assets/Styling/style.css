@@ -77,7 +77,8 @@ datalist option {
 }
 
 div.buttons-wrapper button,
-button.link {
+button.link,
+form button {
   font-size: 1.4rem;
   background-color: hsla(205deg, 100%, 30%, 0.5);
   color: hsl(205deg, 90%, 70%);
@@ -89,8 +90,14 @@ button.link {
   transition: 250ms ease-in-out;
 }
 div.buttons-wrapper button:hover,
-button.link:hover {
+button.link:hover,
+form button:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
+}
+
+form button {
+  font-size: 1.1em;
+  color: hsl(205deg, 100%, 80%);
 }
 
 input,

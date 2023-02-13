@@ -12,6 +12,7 @@
     <script src="./Assets/Scripts/YNselect.js"></script>
     <script src="./Assets/Scripts/numberDisplay.js"></script>
     <script src="./Assets/Scripts/switchDisplay.js"></script>
+    <script src="./Assets/Scripts/filterSelect.js" defer></script>
 </head>
 
 <body>
@@ -22,9 +23,9 @@
             <input type="text" data-tag="scouter's name" class="info input" id="scouter_name"
                 data-hebrew-tag="שם ממלא הטופס" placeholder="שמך" required>
             <h2>שם קבוצה ומספר</h2>
-            <input data-tag="name" type="text" class="info input" id="name" list="teams_suggest"
+            <select data-tag="name" type="text" class="info input" id="teamRoundsSelector" list="teams_suggest"
                 data-hebrew-tag="שם קבוצה ומספר" json="שם קבוצה ומספר" required>
-            <datalist id="teams_suggest">
+                <!-- <datalist id="teams_suggest"> -->
                 <option index="1">Orbit Vikings #14029</option>
                 <option index="2">Fata Morgana #15637</option>
                 <option index="3">Mishmash #12016</option>
@@ -73,9 +74,12 @@
                 <option index="46">Amal Maale Adumim#22681</option>
                 <option index="47">Red Mask #17182</option>
                 <option index="48">Sycatech #18268</option>
-            </datalist>
-            <h2>מקצה</h2>
-            <input data-tag="round" type="number" class="info input" data-hebrew-tag="מקצה" min="0" json="מקצה">
+                <!-- </datalist> -->
+            </select>
+            <h2>בחר מקצה</h2>
+            <input data-tag="round" type="number" name="" id="selectTeamsRoundInput" class="info input"
+                data-hebrew-tag="מקצה" min="0" json="מקצה">
+            <button id="selectTeamsRoundButton" type="button">בחר</button>
             <h1 class="title">אוטנומי</h1>
             <h2>כמה קונוסים שמו ב</h2>
             <div class="pole-display-wrapper">
