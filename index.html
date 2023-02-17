@@ -13,12 +13,15 @@
     <script src="./Assets/Scripts/numberDisplay.js"></script>
     <script src="./Assets/Scripts/switchDisplay.js"></script>
     <script src="./Assets/Scripts/filterSelect.js" defer></script>
+    <script src="./Assets/Scripts/internetDetector.js" defer></script>
 </head>
 
 <body>
 
     <div class="center">
         <form class="hebrew">
+            <h1 id="offline-wrapper" style="display: none;" data-refreshOffline="true"></h1>
+
             <h2>שם ממלא הטופס</h2>
             <input type="text" data-tag="scouter's name" class="info input" id="scouter_name"
                 data-hebrew-tag="שם ממלא הטופס" placeholder="שמך" required>
@@ -99,7 +102,7 @@
 
             <h2>חנייה</h2>
             <switch-display class="info input" data-tag="parking location-autonomous"
-                titles="חנייה לפי זיהוי תמונה;חנייה בתוך חצי הריבוע בקצה;חנייה בטרמינל-משולש"></switch-display>
+                titles="חנייה לפי זיהוי תמונה;substation חנייה בתוך ;חנייה בטרמינל-משולש"></switch-display>
             <h1 class="title">TeleOp & EndGame</h1>
             <h2>כמה קונוסים שמו ב</h2>
             <div class="pole-display-wrapper">
