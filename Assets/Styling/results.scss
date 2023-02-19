@@ -12,6 +12,8 @@ body {
 .bottom {
   width: 100%;
   @include flexing(column);
+  align-items: center;
+  justify-content: center;
   min-height: 10vh;
   height: fit-content;
 }
@@ -97,22 +99,34 @@ button.link {
 
 table {
   border-spacing: 1em;
-  overflow-x: scroll;
-  display: block;
-  width: 95vw;
+  display: inline-block;
+  width: fit-content;
+  max-width: 95vw;
   border-collapse: collapse;
+  text-align: center;
 
   td {
     border-left: 0.5vh solid getCC(10, 8);
     border-right: 0.5vh solid getCC(10, 8);
     text-align: center;
-    margin: 0em 3em;
+    padding: 0em 0.25em;
 
     $foreground: getCC(10, 9);
     color: $foreground;
     word-break: keep-all;
     line-break: strict;
+
   }
+}
+
+table.scroll-y {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+table.scroll-x {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 tr {

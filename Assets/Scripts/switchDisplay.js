@@ -7,6 +7,7 @@ class SwitchDisplay extends HTMLElement {
     this.defaultSize = 3;
     this.default_style_color = "#102466";
     this.value = "No selection";
+    this.selectionIndex = 0;
 
     this.localShadow.innerHTML = `
             <table class="all-wrapper">
@@ -186,9 +187,9 @@ class SwitchDisplay extends HTMLElement {
         e.classList.remove("active");
       });
       tempButton.classList.add("active");
-      this.value = this.getTitleValue(
-        parseInt(tempButton.getAttribute("index"))
-      );
+      const selectedIndex = tempButton.getAttribute("index");
+      this.value = this.getTitleValue(parseInt(selectedIndex));
+      this.selectionIndex = selectedIndex;
     });
   }
 
@@ -206,6 +207,9 @@ class SwitchDisplay extends HTMLElement {
 
   getValue() {
     return this.value;
+  }
+  get selectedIndex() {
+    return this.selectionIndex;
   }
 
   static get observedAttributes() {

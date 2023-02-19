@@ -59,6 +59,8 @@ body {
   justify-content: space-around;
   align-content: center;
   align-items: center;
+  align-items: center;
+  justify-content: center;
   min-height: 10vh;
   height: -moz-fit-content;
   height: fit-content;
@@ -137,19 +139,31 @@ button.link:hover {
 
 table {
   border-spacing: 1em;
-  overflow-x: scroll;
-  display: block;
-  width: 95vw;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 95vw;
   border-collapse: collapse;
+  text-align: center;
 }
 table td {
   border-left: 0.5vh solid hsl(205deg, 100%, 80%);
   border-right: 0.5vh solid hsl(205deg, 100%, 80%);
   text-align: center;
-  margin: 0em 3em;
+  padding: 0em 0.25em;
   color: hsl(205deg, 100%, 90%);
   word-break: keep-all;
   line-break: strict;
+}
+
+table.scroll-y {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+table.scroll-x {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 tr {

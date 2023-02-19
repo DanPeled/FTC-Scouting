@@ -58,6 +58,16 @@ export async function writeDocPath__(collectionNames = [], o_ = {}) {
     });
 }
 
+export async function getJsonData(path = "") {
+  let data = {};
+  if (path == "") return data;
+  fetch(path)
+    .then((respone) => respone.json())
+    .then((collectedData) => (data = collectedData))
+    .catch((err) => console.error(err));
+  return data;
+}
+
 export async function addDoc__(collectionPathArray = [], o_ = {}) {
   const docRef = await addDoc(
     collection(db, arrayToPath(collectionPathArray)),
@@ -197,6 +207,11 @@ const gatherInfo = (isManual = true, lst = []) => {
         label: e.getAttribute("data-tag"),
         value: e.value,
       };
+      if (e.tagName.toLowerCase() == "switch-display") {
+        infoObj[dataLoc][i]["selectedIndex"] = e.selectedIndex;
+        console.log("adding selected index of display: ", e.selectedIndex);
+        // TODO does this shit work...?
+      }
     });
   } else infoObj = inputsToValues(lst);
   console.log(infoObj);

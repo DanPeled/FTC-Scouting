@@ -5,7 +5,7 @@ if (!navigator.onLine) {
   textWrapper.innerHTML = `No internet, offline ✈`;
 }
 
-const refresh = () => location.reload();
+const refresh = () => location.reload(); // Refreshing current location (address)
 
 window.addEventListener("online", refresh);
 
