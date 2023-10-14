@@ -4,6 +4,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 body {
   width: 100vw;
   min-height: 100vh;
@@ -20,6 +21,7 @@ body {
   align-content: center;
   align-items: center;
 }
+
 body * {
   position: relative;
   margin: 0;
@@ -67,6 +69,7 @@ form {
   align-items: center;
   row-gap: 1em;
 }
+
 form * {
   text-align: right;
 }
@@ -89,6 +92,7 @@ form button {
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
+
 div.buttons-wrapper button:hover,
 button.link:hover,
 form button:hover {
@@ -163,6 +167,7 @@ div.pole-display-wrapper {
   gap: 1vh;
   box-shadow: 0 0 2vh 0 hsl(205deg, 70%, 26%), 0 0 3vh 0 rgba(0, 0, 0, 0.9) inset;
 }
+
 div.pole-display-wrapper * {
   color: white;
 }
