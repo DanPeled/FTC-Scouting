@@ -85,7 +85,7 @@ async function updateViewer(
       resultViewerHTML += `<td>`;
       const { autonomous: auto, teleop_endgame: drive } = obj_;
       [auto, drive].forEach((gameState, gi) => {
-        resultViewerHTML += `<div style="display: grid; grid-template-rows: repeat(5, 1fr); place-items: center;"><div>${gi == 0 ? "<strong>AUTO</strong>" : "<strong>TELEOP&\nENDGAME</strong>"
+        resultViewerHTML += `<div id="data-div" style="display: grid; grid-template-rows: repeat(5, 1fr); place-items: center; background-color: hsl(205, 67%, 19%); margin-bottom: 3px; border-radius: 20px; outline-style: solid;"><div>${gi == 0 ? "<strong>AUTO</strong>" : "<strong>TELEOP&\nENDGAME</strong>"
           }</div>`; //TODO: use div and custom component poles-display
         gameState.forEach((pole, i) => {
           // let poleDisplay = document.createElement("poles-display");

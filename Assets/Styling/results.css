@@ -105,7 +105,6 @@ div.buttons-wrapper button:hover,
 button.link:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
 }
-
 #result_viewer {
   font-size: 100%;
   line-height: 1.4em;
@@ -152,6 +151,7 @@ table {
   max-width: 95vw;
   border-collapse: collapse;
   text-align: center;
+  border-radius: 8px;
 }
 
 table td {
@@ -162,6 +162,14 @@ table td {
   color: hsl(205deg, 100%, 90%);
   word-break: keep-all;
   line-break: strict;
+}
+
+tr td:is(:first-child) {
+  background-color: hsl(204, 55%, 21%);
+  font-weight: bold;
+}
+tr td:is(:not(:first-child)){
+  background-color: hsl(205, 75%, 23%); margin-bottom: 1px; border-radius: 5px; outline-style: solid;
 }
 table.scroll-y {
   overflow-x: hidden;
