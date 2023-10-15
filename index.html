@@ -28,54 +28,54 @@
             <input data-tag="name" type="text" class="info input" id="teamRoundsSelector" list="teams_suggest"
                 data-hebrew-tag="שם קבוצה ומספר" json="שם קבוצה ומספר" required>
             <datalist id="teams_suggest">
-                <option index="1">Orbit Vikings #14029</option>
-                <option index="2">Fata Morgana #15637</option>
-                <option index="3">Mishmash #12016</option>
-                <option index="4">Deagles #22144</option>
-                <option index="5">Black Tigers #11192</option>
-                <option index="6">Super Nova #11567</option>
-                <option index="7">Roboten #15298</option>
-                <option index="8">Scifighters #16473</option>
-                <option index="9">Tatooine #12201</option>
-                <option index="10">Connection #11808</option>
-                <option index="11">Blackbeard #17019</option>
-                <option index="12">Boosteam #15811</option>
-                <option index="13">Jotanheim #22734</option>
-                <option index="14">BTJ #13452</option>
-                <option index="15">Atmoix #11443</option>
-                <option index="16">Orbit 12 #14028</option>
-                <option index="17">Orbit #14872</option>
-                <option index="18">Orange Fox #12363</option>
-                <option index="19">Apollo #9662</option>
-                <option index="20">Makers Assemble #13146</option>
-                <option index="21">Achva Gilboa #11803</option>
-                <option index="22">AM.I.T #15141</option>
-                <option index="23">Fireflies #21656</option>
-                <option index="24">Mechanic Makers #17056</option>
-                <option index="25">Megiddo Lions #18833</option>
-                <option index="26">Team Hydra #22947</option>
-                <option index="27">Meggido Lions #12797</option>
-                <option index="28">Quack Attack #11635</option>
-                <option index="29">AIS Talons #19967</option>
-                <option index="30">Velocity #19766</option>
-                <option index="31">Goblin Mode #21957</option>
-                <option index="32">Ray Ladies #22644</option>
-                <option index="33">Bomba #14869</option>
-                <option index="34">Ringostar #18735</option>
-                <option index="35">Black Thunder #11226</option>
-                <option index="36">Everglow #19000</option>
-                <option index="37">Eclipse #21796</option>
-                <option index="38">Arava #21850</option>
-                <option index="39">Build For Change #20669</option>
-                <option index="40">Alhekma #22764</option>
-                <option index="41">Plantech #17106</option>
-                <option index="42">Super Cow #12989</option>
-                <option index="43">Hof Hasharon #21770</option>
-                <option index="44">Mizpe Yam #22646</option>
-                <option index="45">Everest #12817</option>
-                <option index="46">Amal Maale Adumim#22681</option>
-                <option index="47">Red Mask #17182</option>
-                <option index="48">Sycatech #18268</option>
+                <option>Orbit Vikings #14029</option>
+                <option>Fata Morgana #15637</option>
+                <option>Mishmash #12016</option>
+                <option>Deagles #22144</option>
+                <option>Black Tigers #11192</option>
+                <option>Super Nova #11567</option>
+                <option>Roboten #15298</option>
+                <option>Scifighters #16473</option>
+                <option>Tatooine #12201</option>
+                <option>Connection #11808</option>
+                <option>Blackbeard #17019</option>
+                <option>Boosteam #15811</option>
+                <option>Jotanheim #22734</option>
+                <option>BTJ #13452</option>
+                <option>Atmoix #11443</option>
+                <option>Orbit 12 #14028</option>
+                <option>Orbit #14872</option>
+                <option>Orange Fox #12363</option>
+                <option>Apollo #9662</option>
+                <option>Makers Assemble #13146</option>
+                <option>Achva Gilboa #11803</option>
+                <option>AM.I.T #15141</option>
+                <option>Fireflies #21656</option>
+                <option>Mechanic Makers #17056</option>
+                <option>Megiddo Lions #18833</option>
+                <option>Team Hydra #22947</option>
+                <option>Meggido Lions #12797</option>
+                <option>Quack Attack #11635</option>
+                <option>AIS Talons #19967</option>
+                <option>Velocity #19766</option>
+                <option>Goblin Mode #21957</option>
+                <option>Ray Ladies #22644</option>
+                <option>Bomba #14869</option>
+                <option>Ringostar #18735</option>
+                <option>Black Thunder #11226</option>
+                <option>Everglow #19000</option>
+                <option>Eclipse #21796</option>
+                <option>Arava #21850</option>
+                <option>Build For Change #20669</option>
+                <option>Alhekma #22764</option>
+                <option>Plantech #17106</option>
+                <option>Super Cow #12989</option>
+                <option>Hof Hasharon #21770</option>
+                <option>Mizpe Yam #22646</option>
+                <option>Everest #12817</option>
+                <option>Amal Maale Adumim#22681</option>
+                <option>Red Mask #17182</option>
+                <option>Sycatech #18268</option>
             </datalist>
             <!-- </select> -->
             <h2>בחר מקצה</h2>
@@ -149,10 +149,15 @@
         </form>
         <div class="buttons-wrapper">
             <button class="button SubButton" id="sub">Submit📩🔁</button>
-            <button class="link" onclick="window.open('./results.html','_self')">See Results</button>
+            <button class="link" onclick="window.open('./Pages/Results/','_self')">See Results</button>
         </div>
     </div>
-
+    <script>
+        var datalist = document.getElementById("teams_suggest");
+        for (let i = 0; i < datalist.children.length; i++) {
+            datalist.children[i].setAttribute('index', i + 1)
+        }
+    </script>
 </body>
 
 </html>
