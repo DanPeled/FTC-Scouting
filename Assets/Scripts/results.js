@@ -17,9 +17,11 @@ const defaultDir = ["formData"];
 let mode = "forms";
 
 const calculatePoleScore = (obj_) => {
+  // TODO: Change to CENTERSTAGE Scoring
   // Setting up variables
   let score = 0;
   const { autonomous: auto, teleop_endgame: drive, generalData: gd } = obj_;
+
   // Parking
   const autoParkDict = [2, 20]; // TODO: Continue parking scoring...
   if (gd[3].value == "true")
@@ -30,6 +32,7 @@ const calculatePoleScore = (obj_) => {
   if (gd[7].value == "true") score += 20; // Completing circuit
   console.log(score);
   // Cones
+
   const scoreDict = {
     terminal: 1,
     ground: 2,
