@@ -4,6 +4,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 body {
   width: 100vw;
   min-height: 100vh;
@@ -20,6 +21,7 @@ body {
   align-content: center;
   align-items: center;
 }
+
 body * {
   position: relative;
   margin: 0;
@@ -78,6 +80,7 @@ body {
 div.middle {
   background-color: hsl(205deg, 60%, 30%);
 }
+
 div.middle h1 {
   text-decoration: underline;
 }
@@ -102,6 +105,7 @@ button.link {
   padding: 0.2em 0.4em;
   transition: 250ms ease-in-out;
 }
+
 div.buttons-wrapper button:hover,
 button.link:hover {
   box-shadow: 0em 0em 0.2em 0em hsl(205deg, 90%, 70%) inset, 0em 0em 0.35em 0em hsl(205deg, 90%, 70%) inset;
@@ -125,6 +129,7 @@ button.link:hover {
   margin: 0em 1.2vw;
   overflow-x: scroll;
 }
+
 #result_viewer p,
 #result_viewer h3 {
   font-size: 1.1rem;
@@ -133,9 +138,11 @@ button.link:hover {
   display: inline;
   font-family: "Varela Round";
 }
+
 #result_viewer h3 {
   color: #cfe9fc;
 }
+
 #result_viewer div.result_encapsulator {
   border-bottom: 1em hsl(205deg, 60%, 50%) solid;
   border-radius: 2em;
@@ -150,7 +157,9 @@ table {
   max-width: 95vw;
   border-collapse: collapse;
   text-align: center;
+  border-radius: 8px;
 }
+
 table td {
   border-left: 0.5vh solid hsl(205deg, 100%, 80%);
   border-right: 0.5vh solid hsl(205deg, 100%, 80%);
@@ -159,6 +168,19 @@ table td {
   color: hsl(205deg, 100%, 90%);
   word-break: keep-all;
   line-break: strict;
+}
+
+tr td:is(:first-child) {
+  background-color: hsl(204, 55%, 21%);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+tr td:is(:not(:first-child)) {
+  background-color: hsl(205, 75%, 23%);
+  margin-bottom: 1px;
+  border-radius: 5px;
+  outline-style: solid;
 }
 
 table.scroll-y {
@@ -182,7 +204,7 @@ div.menu {
   display: none;
 }
 
-button.menu-toggle.toggle.active + div.menu {
+button.menu-toggle.toggle.active+div.menu {
   width: 50vw;
   display: flexbox;
   background-color: hsl(205deg, 60%, 40%);

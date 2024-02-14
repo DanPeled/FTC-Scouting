@@ -17,9 +17,11 @@ const defaultDir = ["formData"];
 let mode = "forms";
 
 const calculatePoleScore = (obj_) => {
+  // TODO: Change to CENTERSTAGE Scoring
   // Setting up variables
   let score = 0;
   const { autonomous: auto, teleop_endgame: drive, generalData: gd } = obj_;
+
   // Parking
   const autoParkDict = [2, 20]; // TODO: Continue parking scoring...
   if (gd[3].value == "true")
@@ -30,6 +32,7 @@ const calculatePoleScore = (obj_) => {
   if (gd[7].value == "true") score += 20; // Completing circuit
   console.log(score);
   // Cones
+
   const scoreDict = {
     terminal: 1,
     ground: 2,
@@ -85,9 +88,8 @@ async function updateViewer(
       resultViewerHTML += `<td>`;
       const { autonomous: auto, teleop_endgame: drive } = obj_;
       [auto, drive].forEach((gameState, gi) => {
-        resultViewerHTML += `<div style="display: grid; grid-template-rows: repeat(5, 1fr); place-items: center;"><div>${
-          gi == 0 ? "auto" : "teleop&\nendgame"
-        }</div>`; //TODO: use div and custom component poles-display
+        resultViewerHTML += `<div id="data-div" style="display: grid; grid-template-rows: repeat(5, 1fr); place-items: center; background-color: hsl(205, 67%, 19%); margin-bottom: 3px; border-radius: 20px; outline-style: solid;"><div>${gi == 0 ? "<strong>AUTO</strong>" : "<strong>TELEOP&\nENDGAME</strong>"
+          }</div>`; //TODO: use div and custom component poles-display
         gameState.forEach((pole, i) => {
           // let poleDisplay = document.createElement("poles-display");
           // poleDisplay.setManualDisplays(1);

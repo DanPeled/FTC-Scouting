@@ -58,9 +58,9 @@ class YesNoSelect extends HTMLElement {
     this.render(this.getAttribute("value"));
   }
 
-  disconnectedCallback() {}
+  disconnectedCallback() { }
 
-  adoptedCallback() {}
+  adoptedCallback() { }
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
       case "value":

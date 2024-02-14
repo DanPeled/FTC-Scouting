@@ -106,5 +106,4 @@ const addOptions = (s, num = 1) => {
     s.appendChild(option_);
   });
 };
-
 addSelectEvent();
