@@ -56,7 +56,7 @@ async function updateViewer(
     return;
   }
   if (changeMode == "false") return;
-  resultViewer.innerHTML = "";
+  resultViewer.innerHTML = "Loading...";
   let objs = await getDocsData__(collectionPathArray);
   objs.sort((obj1, obj2) => {
     // Name sorting algorithm
@@ -151,6 +151,7 @@ async function updateViewer(
         return 0;
       });
     }
+    resultViewer.innerHTML = "";
     averageObjs.forEach((o_) => {
       const row = document.createElement("tr");
       const scoreCell = document.createElement("td");
@@ -161,7 +162,6 @@ async function updateViewer(
       row.appendChild(scoreCell);
       resultViewer.appendChild(row);
     });
-    // [nameRow, scoreRow].forEach((row) => resultViewer.appendChild(row));
   }
 }
 

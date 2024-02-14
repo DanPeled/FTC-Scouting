@@ -43,6 +43,11 @@ body * {
   background: hsl(205deg, 80%, 60%);
 }
 
+::-webkit-scrollbar-corner {
+  background: none;
+  box-shadow: 0em 0em 0.5vh hsl(205deg, 50%, 50%) inset;
+}
+
 body {
   justify-content: start;
   gap: 5vh;
